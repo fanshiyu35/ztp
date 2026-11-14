@@ -84,6 +84,14 @@
 | Andreas Grünert | 撞德国运输公司 "Transport & Dienstleistungen Andreas Grünert" |
 | Sofia Engström | 撞瑞典女子冰球职业球员（MODO Hockey / Leksands IF） |
 
+## 2B. 域名核查（2026-11-14，DNS 实测）——需主控决策
+- 参数包设定新官网域名为 **ztp.org.pl**，但实测该域名**已被真实组织注册并在使用**：
+  - `dig ztp.org.pl` → A 89.161.233.157
+  - 该地址实际服务内容为「Zachodniopomorskie Towarzystwo Przyrodnicze」（西滨海省自然主义者协会，波兰真实组织）官网。
+- 与红线「虚构机构名严禁撞真实机构」同类风险：若 DNS 直接指向本 GitHub Pages 站点，会覆盖/冲突真实组织现有域名。
+- 本子任务按指令不动 DNS；仓库已按要求放置 CNAME 文件（ztp.org.pl）并完成 Pages 部署；**自定义域名绑定未在 Pages 配置中启用**（否则 github.io 会 301 到 ztp.org.pl 的真实站点）。
+- 建议主控：更换域名（如 ztp-krakow.pl / ztp-transport.pl 之类，需另行查重），或确认域名归属后统一处理。所需 DNS 记录（以最终选定域名为准）：CNAME <域名> → fanshiyu35.github.io（或对 apex 使用 GitHub Pages 4 条 A 记录 185.199.108.153–185.199.111.153）。
+
 ## 三、红线合规备注
 - 官网团队页不使用 ZTP 真实现任董事会姓名（KRS 公开姓名一律不出现），全部为虚构姓名职务化呈现 ✓
 - 获奖人 Dr. Yanxi Liu 的任职机构 TransMetric Analytics, Inc. 为全案设定的虚构公司 ✓
