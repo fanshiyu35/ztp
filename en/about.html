@@ -1,151 +1,1465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>About — Private Transport Federation (ZTP)</title>
-<meta name="description" content="History, mission, governance and member organisations of the Private Transport Federation (Zrzeszenie Transportu Prywatnego).">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6b1a1a">
+  <title>About | Zrzeszenie Transportu Prywatnego</title>
+  <style>
+    :root {
+      --red: #6b1a1a;
+      --red-dark: #501313;
+      --red-light: #8b3030;
+      --bg: #f4f4f2;
+      --white: #ffffff;
+      --text: #292929;
+      --muted: #777777;
+      --line: #dededb;
+      --soft: #efefec;
+      --sidebar-width: 232px;
+      --font: Tahoma, Verdana, Arial, sans-serif;
+    }
 
-<style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* Federation register: a persistent burgundy directory and tabular content. */
-:root{--red:#761f2b;--deep:#42121a;--ink:#25262a;--muted:#676b71;--line:#d8d8d8;--wash:#f3f3f1}*{margin:0;padding:0;box-sizing:border-box}html{background:#e5e5e2}body{font:14px/1.65 Arial,Helvetica,sans-serif;color:var(--ink);max-width:1200px;margin:auto;background:white;min-height:100vh}a{color:var(--red);text-decoration:none}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid #bd4f62;outline-offset:3px}.flagband{display:flex;height:8px}.white{background:white;flex:1}.red{background:var(--red);flex:1}.federation-shell{display:grid;grid-template-columns:260px minmax(0,1fr);grid-template-rows:auto 1fr;min-height:calc(100vh - 8px)}header.site{grid-column:1;grid-row:1 / span 2;background:var(--deep);color:white;border-right:1px solid var(--deep)}.header-inner{padding:34px 27px 29px}.brand .mark{margin-bottom:22px}.brand .mark img{display:block;width:62px;height:62px;background:white;padding:5px}.brand h1{font-size:25px;line-height:1.12;letter-spacing:-.035em;color:white}.brand .tagline{font-size:10px;line-height:1.8;letter-spacing:.08em;text-transform:uppercase;color:#d6b9bd;margin-top:14px}.header-right{font-size:10px;line-height:1.85;color:#d6b9bd;margin-top:25px;overflow-wrap:anywhere}.langpills{display:flex;gap:6px;margin-top:19px}.langpills a{padding:4px 11px;border:1px solid #90636b;color:#e8d9dc;font-size:11px}.langpills a.cur{background:white;color:var(--deep);border-color:white}.topnav{border-top:1px solid #75434c}.topnav .wrap{padding:0}.topnav a{display:block;font-size:13px;font-weight:bold;color:#e9dce0;padding:17px 27px;border-bottom:1px solid #75434c;border-left:5px solid transparent}.topnav a.cur,.topnav a:hover{background:var(--red);color:white;border-left-color:#fff;text-decoration:none}.wrap{padding:0 37px;margin:auto;max-width:1050px}.hero,.crumbs{grid-column:2;grid-row:1}.hero{background:#eeeae8;border-bottom:1px solid #cec4c2;padding:39px 0 33px}.hero h2{max-width:700px;font-size:32px;line-height:1.15;letter-spacing:-.03em;color:var(--deep)}.lead{font-size:14px;color:#555860;line-height:1.8}.hero p.lead{margin:17px 0 20px}.cta{display:flex;gap:9px;flex-wrap:wrap}.btn{display:inline-block;border:1px solid var(--red);padding:10px 14px;font-size:11px;font-weight:bold}.btn.amber{background:var(--red);color:white}.btn.outline{background:#fff;color:var(--red)}.crumbs{border-bottom:1px solid var(--line);background:var(--wash);font-size:11px;padding:14px 0;color:var(--muted)}.crumbs span{margin:0 9px}main{grid-column:2;grid-row:2;min-width:0;padding:27px 0 48px}.pagehead{padding:0 0 25px;border-bottom:3px solid var(--red);margin-bottom:24px}.pagehead h2{font-size:32px;line-height:1.2;letter-spacing:-.03em;color:var(--deep);margin:9px 0 16px}.kicker{font-size:10px;letter-spacing:.1em;font-weight:bold;text-transform:uppercase;color:var(--red)}h3.sec{margin:30px 0 15px;padding:10px 0;border-top:2px solid var(--red);border-bottom:1px solid var(--line);font-size:16px;line-height:1.4;color:var(--deep)}p{margin:0 0 14px}ul,ol{margin:0 0 17px 20px}li{margin:5px 0}.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin:0 0 28px}.stat{padding:15px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--wash)}.stat .num{font-size:30px;font-weight:bold;line-height:1.2;color:var(--red);letter-spacing:-.045em}.stat .lbl{font-size:9px;line-height:1.6;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:5px}.cards{border-top:1px solid var(--line);margin:0 0 25px}.card{display:grid;grid-template-columns:155px 1fr;border-bottom:1px solid var(--line);background:white;padding:17px 0;gap:20px}.card h4{font-size:13px;color:var(--deep);line-height:1.6}.card p{font-size:12px;color:#555860;margin:0}.news-item{display:grid;grid-template-columns:110px minmax(0,1fr);border-bottom:1px solid var(--line);padding:17px 0;gap:19px}.news-item .date{font-size:10px;color:var(--red);font-weight:bold;padding:4px 0}.news-item h4{font-size:14px;line-height:1.5;margin-bottom:7px}.news-item p{font-size:12px;color:#555860;margin:0}.tbl{border-collapse:collapse;width:100%;font-size:13px;margin:13px 0 22px;border:1px solid var(--line)}.tbl th{text-align:left;background:var(--red);color:#fff;padding:11px 14px;font-size:10px;font-weight:bold;letter-spacing:.06em;text-transform:uppercase}.tbl td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}.tbl tr:nth-child(odd) td{background:var(--wash)}.tbl .role,.tbl .org{color:var(--muted);font-size:12px}.tbl .name{font-weight:bold}.laureate{border:1px solid #cfb7bc;border-left:5px solid var(--red);background:#f8f3f3;padding:22px 23px;margin:17px 0 25px}.laureate .lbl{font-size:10px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:9px}.laureate h4{font-size:24px;color:var(--deep);margin-bottom:10px}.laureate p{font-size:13px;margin-bottom:10px}.laureate p:last-child{margin:0}.note{padding:17px 20px;border-left:3px solid #9b777e;background:var(--wash);font-size:12px;margin:18px 0}.toc{list-style:none;padding:0;margin:15px 0 25px;border:1px solid var(--line)}.toc li{padding:11px 15px;margin:0;border-bottom:1px solid var(--line);font-size:12px}.toc li:last-child{border-bottom:0}.toc .no{display:inline-block;width:32px;color:var(--red);font-weight:bold}.toc .hl{background:#f3e9eb;border-left:4px solid var(--red)}footer.site{background:#ececea;border-top:4px solid var(--red);color:#555860}.footer-cols{display:grid;grid-template-columns:1.25fr 1.15fr 1fr;gap:35px;padding:31px 37px 24px}.footer-cols h5{font-size:11px;color:var(--deep);margin-bottom:12px}.footer-cols p,.footer-cols li{font-size:11px;line-height:1.75}.footer-cols ul{list-style:none;margin:0}.footer-flag{height:4px;display:flex}.footer-bottom{background:var(--deep);color:#d6b9bd;font-size:10px;padding:15px 0}
-@media(max-width:800px){.federation-shell{display:block}header.site{border-right:0}.header-inner{padding:23px;display:flex;align-items:start;gap:25px}.brand{display:flex;gap:15px;align-items:start;flex:1}.brand .mark{margin:0}.brand h1{font-size:21px}.brand .tagline{margin-top:8px}.header-right{margin:0;max-width:170px}.topnav .wrap{display:flex;flex-wrap:wrap}.topnav a{padding:13px 17px;border-left:0;border-bottom:0;border-top:3px solid transparent}.topnav a.cur{border-top-color:white}.wrap{padding:0 23px}.hero{padding:27px 0}.hero h2,.pagehead h2{font-size:28px}.stats{grid-template-columns:repeat(2,1fr)}.footer-cols{grid-template-columns:1fr;gap:18px;padding:27px 23px}.card{grid-template-columns:120px 1fr}.news-item{grid-template-columns:85px 1fr}.tbl th,.tbl td{padding:8px}}
-@media(max-width:480px){.header-inner{display:block}.header-right{max-width:none;margin-top:16px}.header-right br{display:none}.brand .tagline{max-width:250px}.card{display:block}.card h4{margin-bottom:7px}.hero h2{font-size:25px}}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 35px;
+    }
 
-</style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-strip {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: var(--sidebar-width);
+      right: 0;
+      height: 8px;
+      background: var(--red);
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      position: fixed;
+      z-index: 90;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--sidebar-width);
+      display: flex;
+      flex-direction: column;
+      background: var(--red);
+      color: #fff;
+      padding: 38px 0 25px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand {
+      display: block;
+      padding: 0 23px 27px;
+      border-bottom: 1px solid rgba(255,255,255,.19);
+    }
+
+    .brand-name {
+      display: block;
+      max-width: 185px;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.5px;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 12px;
+      color: rgba(255,255,255,.73);
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .nav-label {
+      padding: 29px 23px 12px;
+      color: rgba(255,255,255,.5);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 0 12px;
+    }
+
+    .side-nav a {
+      position: relative;
+      display: block;
+      padding: 12px 12px 12px 19px;
+      border-left: 3px solid transparent;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      transition: background .2s, color .2s;
+    }
+
+    .side-nav a:hover,
+    .side-nav a.active {
+      background: rgba(255,255,255,.12);
+      border-left-color: #fff;
+      color: #fff;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      padding: 20px 23px 0;
+      border-top: 1px solid rgba(255,255,255,.19);
+      color: rgba(255,255,255,.7);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .sidebar-bottom strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    /* Main layout */
+
+    .main {
+      min-height: 100vh;
+      margin-left: var(--sidebar-width);
+      padding-top: 8px;
+    }
+
+    .top-header {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 34px;
+      padding: 12px 6.2%;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #555;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .contact-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid #e4e0dc;
+      color: var(--red);
+      font-size: 13px;
+    }
+
+    .contact-item a:hover {
+      color: var(--red);
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-left: 22px;
+      border-left: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    .language a {
+      padding: 5px 8px;
+      color: #777;
+    }
+
+    .language a:first-child {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .content {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 43px 6.2% 70px;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 48px 45px 44px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .hero::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 190px;
+      height: 190px;
+      border-right: 1px solid #ece9e5;
+      border-top: 1px solid #ece9e5;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 4px 11px;
+      background: #f2eaea;
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      margin: 0 0 20px;
+      color: #282525;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.8px;
+    }
+
+    .hero p {
+      max-width: 770px;
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 43px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 21px;
+      border: 1px solid var(--red);
+      background: var(--red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background .2s, color .2s;
+    }
+
+    .button:hover {
+      background: var(--red-dark);
+    }
+
+    .button-outline {
+      background: #fff;
+      color: var(--red);
+    }
+
+    .button-outline:hover {
+      background: #f6eeee;
+      color: var(--red-dark);
+    }
+
+    /* Statistics */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 23px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 19px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-number {
+      color: var(--red);
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .stat-label {
+      margin-top: 6px;
+      color: #777;
+      font-size: 11px;
+    }
+
+    /* Sections */
+
+    .section {
+      margin-top: 54px;
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: #292929;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .section-heading::after {
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      content: "";
+    }
+
+    /* Activities */
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .activity-card {
+      min-height: 215px;
+      padding: 24px 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--red);
+    }
+
+    .activity-index {
+      display: block;
+      margin-bottom: 15px;
+      color: #b9a3a0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .activity-card h3 {
+      margin: 0 0 12px;
+      color: var(--red);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .activity-card p {
+      margin: 0;
+      color: #707070;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* News table */
+
+    .news-table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .news-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .news-table thead {
+      background: #f0efed;
+    }
+
+    .news-table th {
+      padding: 13px 19px;
+      border-bottom: 1px solid var(--line);
+      color: #777;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .news-table td {
+      padding: 21px 19px;
+      border-bottom: 1px solid #eae9e6;
+      vertical-align: top;
+    }
+
+    .news-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .news-table tbody tr:hover {
+      background: #faf9f7;
+    }
+
+    .news-date {
+      width: 150px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .news-content h3 {
+      margin: 0 0 8px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .news-content p {
+      margin: 0;
+      color: #777;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* Award */
+
+    .award-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .award-header {
+      padding: 22px 27px;
+      background: #f8f7f5;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .award-header h3 {
+      margin: 0;
+      color: var(--red);
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .award-meta {
+      margin-top: 9px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .award-body {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 25px;
+      padding: 28px;
+    }
+
+    .award-recipient {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      background: #f5f0ee;
+      border: 1px solid #e8dedd;
+      text-align: center;
+    }
+
+    .award-recipient-label {
+      margin-bottom: 12px;
+      color: #8a7774;
+      font-size: 11px;
+    }
+
+    .award-recipient-name {
+      color: var(--red);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .award-description {
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .award-description p {
+      margin: 0;
+    }
+
+    .award-link {
+      display: inline-block;
+      margin-top: 17px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--red);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .award-link:hover {
+      color: var(--red-dark);
+      border-color: var(--red-dark);
+    }
+
+    /* About page */
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 24px;
+      color: #888;
+      font-size: 11px;
+    }
+
+    .breadcrumb a {
+      transition: color .2s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--red);
+    }
+
+    .breadcrumb-separator {
+      color: #b9b4b0;
+    }
+
+    .breadcrumb-current {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .about-hero {
+      padding-top: 43px;
+      padding-bottom: 43px;
+    }
+
+    .about-hero h1 {
+      max-width: 700px;
+    }
+
+    .about-panel {
+      padding: 29px 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .about-panel p {
+      margin: 0;
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .about-panel p + p {
+      margin-top: 15px;
+    }
+
+    .mission-panel {
+      padding: 27px 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .mission-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .mission-list li {
+      position: relative;
+      padding: 15px 15px 15px 36px;
+      border-bottom: 1px solid #eeece9;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .mission-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .mission-list li::before {
+      position: absolute;
+      top: 22px;
+      left: 9px;
+      width: 7px;
+      height: 7px;
+      background: var(--red);
+      content: "";
+    }
+
+    .governance-intro {
+      margin-bottom: 20px;
+    }
+
+    .governance-intro p {
+      margin: 0;
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .table-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+    }
+
+    .about-table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .about-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .about-table thead {
+      background: #f0efed;
+    }
+
+    .about-table th {
+      padding: 13px 20px;
+      border-bottom: 1px solid var(--line);
+      color: #777;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .about-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid #eae9e6;
+      color: #555;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+
+    .about-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .about-table tbody tr:hover {
+      background: #faf9f7;
+    }
+
+    .about-table td:first-child {
+      width: 55%;
+      color: #777;
+    }
+
+    .about-table td:last-child {
+      color: #333;
+      font-weight: 700;
+    }
+
+    .member-table td:first-child {
+      width: 76%;
+      color: #444;
+      font-weight: 700;
+    }
+
+    .member-table td:last-child {
+      color: var(--red);
+      font-weight: 400;
+    }
+
+    /* Timeline */
+
+    .timeline-panel {
+      position: relative;
+      padding: 12px 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .timeline {
+      position: relative;
+      margin: 0;
+      padding: 10px 0;
+      list-style: none;
+    }
+
+    .timeline::before {
+      position: absolute;
+      top: 26px;
+      bottom: 27px;
+      left: 54px;
+      width: 1px;
+      background: #e5d9d7;
+      content: "";
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 83px 1fr;
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .timeline-item:not(:last-child) {
+      border-bottom: 1px solid #eeece9;
+    }
+
+    .timeline-year {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 3px;
+      color: var(--red);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .timeline-year::after {
+      position: absolute;
+      top: 11px;
+      right: -5px;
+      width: 9px;
+      height: 9px;
+      background: var(--red);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      content: "";
+      box-shadow: 0 0 0 1px #d9c4c1;
+    }
+
+    .timeline-description {
+      padding-left: 5px;
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .timeline-description strong {
+      color: #444;
+      font-weight: 700;
+    }
+
+    /* Footer */
+
+    .footer {
+      margin-left: var(--sidebar-width);
+      background: #292727;
+      color: #d5d1cf;
+    }
+
+    .footer-inner {
+      width: min(1120px, 100%);
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      gap: 48px;
+      margin: 0 auto;
+      padding: 48px 6.2% 42px;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .footer-column p {
+      margin: 0;
+      color: #aaa5a2;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 1.7;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-contact {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 2.1;
+    }
+
+    .footer-contact a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 59px;
+      padding: 12px 6.2%;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #96908d;
+      font-size: 11px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1050px) {
+      .content {
+        padding: 35px 4.5% 60px;
+      }
+
+      .footer-inner {
+        gap: 28px;
+        padding-right: 4.5%;
+        padding-left: 4.5%;
+      }
+
+      .activity-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .top-header {
+        padding-right: 4.5%;
+        padding-left: 4.5%;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --sidebar-width: 0px;
+      }
+
+      .top-strip {
+        left: 0;
+      }
+
+      .sidebar {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        padding: 20px 0 12px;
+      }
+
+      .brand {
+        padding: 0 22px 17px;
+      }
+
+      .brand-name {
+        max-width: none;
+        font-size: 19px;
+      }
+
+      .brand-subtitle {
+        margin-top: 6px;
+        font-size: 11px;
+      }
+
+      .nav-label {
+        padding: 15px 23px 8px;
+      }
+
+      .side-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 0 12px;
+      }
+
+      .side-nav a {
+        padding: 8px 10px;
+        border-left: 0;
+        border-bottom: 2px solid transparent;
+        font-size: 12px;
+      }
+
+      .side-nav a:hover,
+      .side-nav a.active {
+        border-left-color: transparent;
+        border-bottom-color: #fff;
+      }
+
+      .sidebar-bottom {
+        display: none;
+      }
+
+      .main {
+        margin-left: 0;
+        padding-top: 8px;
+      }
+
+      .top-header {
+        min-height: auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 14px 5%;
+      }
+
+      .contact-item {
+        font-size: 11px;
+      }
+
+      .contact-icon {
+        width: 27px;
+        height: 27px;
+      }
+
+      .language {
+        padding-left: 12px;
+      }
+
+      .content {
+        padding: 28px 5% 50px;
+      }
+
+      .hero {
+        padding: 34px 25px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .hero::after {
+        width: 100px;
+        height: 100px;
+      }
+
+      .section {
+        margin-top: 40px;
+      }
+
+      .section-heading h2 {
+        font-size: 19px;
+      }
+
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-card {
+        min-height: auto;
+      }
+
+      .award-body {
+        grid-template-columns: 1fr;
+        gap: 17px;
+        padding: 20px;
+      }
+
+      .award-recipient {
+        min-height: 120px;
+      }
+
+      .about-panel,
+      .mission-panel {
+        padding: 22px 20px;
+      }
+
+      .timeline-panel {
+        padding: 8px 16px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 65px 1fr;
+        gap: 12px;
+      }
+
+      .timeline::before {
+        left: 42px;
+      }
+
+      .timeline-description {
+        font-size: 12px;
+      }
+
+      .about-table th,
+      .about-table td {
+        padding: 12px 14px;
+      }
+
+      .footer {
+        margin-left: 0;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 22px;
+        padding: 38px 5%;
+      }
+
+      .footer-column:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+        padding: 14px 5%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-header {
+        align-items: flex-start;
+      }
+
+      .contact-item {
+        width: 100%;
+      }
+
+      .language {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .hero {
+        padding: 29px 20px;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .section-heading {
+        gap: 11px;
+      }
+
+      .section-heading h2 {
+        font-size: 17px;
+      }
+
+      .about-table {
+        min-width: 420px;
+      }
+
+      .member-table {
+        min-width: 480px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 55px 1fr;
+        gap: 9px;
+      }
+
+      .timeline::before {
+        left: 37px;
+      }
+
+      .timeline-year {
+        font-size: 13px;
+      }
+
+      .timeline-year::after {
+        right: -5px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 27px;
+      }
+
+      .footer-column:first-child {
+        grid-column: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="flagband"><div class="white"></div><div class="red"></div></div>
+  <div class="top-strip"></div>
 
-<div class="federation-shell">
-<header class="site">
-  <div class="header-inner">
-    <div class="brand">
-      <div class="mark"><img src="../favicon.svg" alt="ZTP emblem" width="58" height="58"></div>
-      <div>
-        <h1>Zrzeszenie Transportu Prywatnego</h1>
-        <div class="tagline">Private Transport Federation · Kraków · since 2001</div>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <a href="/en/" class="brand">
+      <span class="brand-name">Zrzeszenie Transportu Prywatnego</span>
+      <span class="brand-subtitle">Private Transport Federation · Kraków · since 2001</span>
+    </a>
+
+    <div class="nav-label">Navigation</div>
+
+    <nav class="side-nav">
+      <a href="/en/">Home</a>
+      <a href="/en/about/" class="active">About</a>
+      <a href="/en/award-2025/">Award 2025</a>
+      <a href="/en/guidelines/">Guidelines</a>
+      <a href="/en/contact/">Contact</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <strong>Zrzeszenie Transportu Prywatnego</strong>
+      Kraków, Poland<br>
+      Established 2001
+    </div>
+
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Header -->
+    <header class="top-header">
+
+      <div class="contact-item">
+        <span class="contact-icon">✉</span>
+        <a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a>
       </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">⌖</span>
+        <span>ul. Stefana Bobrowskiego 15, 31-552 Kraków</span>
+      </div>
+
+      <div class="language">
+        <a href="/pl/about/">PL</a>
+        <a href="/en/about/">EN</a>
+      </div>
+
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="/en/">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">About</span>
+      </div>
+
+      <!-- Page Hero -->
+      <section class="hero about-hero">
+        <span class="eyebrow">About</span>
+        <h1>Private Transport Federation</h1>
+        <p>We are a nationwide organisation of private passenger transport operators, active without interruption since 2001 in support of private collective transport in Poland.</p>
+      </section>
+
+      <!-- History -->
+      <section class="section" id="history">
+
+        <div class="section-heading">
+          <h2>History and legal basis</h2>
+        </div>
+
+        <div class="about-panel">
+          <p>The Private Transport Federation (Zrzeszenie Transportu Prywatnego, ZTP) was founded in 2001. The organisation was entered into the National Court Register (Krajowy Rejestr Sądowy) on 21 May 2001 under number <strong style="color:var(--red);">KRS 0000013480</strong>; it had previously been listed in the Register of Trade and Services Associations, Transport Associations (Rejestr Zrzeszeń Handlu i Usług, Zrzeszeń Transportu). The Federation's seat is in Kraków, at ul. Stefana Bobrowskiego 15 (31-552 Kraków).</p>
+        </div>
+
+      </section>
+
+      <!-- Mission -->
+      <section class="section" id="mission">
+
+        <div class="section-heading">
+          <h2>Mission</h2>
+        </div>
+
+        <div class="mission-panel">
+          <ul class="mission-list">
+            <li>representing the interests of private passenger transport operators vis-à-vis public administration and transport organisers;</li>
+            <li>raising the standards of service quality, safety and organisation of carriage;</li>
+            <li>developing good practice guidelines, including recommended methods for the assessment and ranking of investment projects;</li>
+            <li>organising an industry award for innovations implemented in transport practice;</li>
+            <li>supporting dialogue and the exchange of experience among member organisations.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- Governance -->
+      <section class="section" id="governance">
+
+        <div class="section-heading">
+          <h2>Governance</h2>
+        </div>
+
+        <div class="governance-intro">
+          <p>Under the Federation's statutes, its bodies are the three-member Board (Zarząd) and the five-member Audit Committee (Komisja Rewizyjna). Day-to-day operations are handled by the ZTP Office in Kraków.</p>
+        </div>
+
+        <div class="table-stack">
+
+          <div class="about-table-wrap">
+            <table class="about-table">
+              <thead>
+                <tr>
+                  <th>Position</th>
+                  <th>Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>President of the Board</td>
+                  <td>Ewa Napiórkowska</td>
+                </tr>
+                <tr>
+                  <td>Vice-President of the Board</td>
+                  <td>Halina Dębowska</td>
+                </tr>
+                <tr>
+                  <td>Board Member</td>
+                  <td>Janusz Gomółka</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="about-table-wrap">
+            <table class="about-table">
+              <thead>
+                <tr>
+                  <th>Position</th>
+                  <th>Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Chair of the Audit Committee</td>
+                  <td>Renata Szulc</td>
+                </tr>
+                <tr>
+                  <td>Deputy Chair of the Audit Committee</td>
+                  <td>Witold Cybulski</td>
+                </tr>
+                <tr>
+                  <td>Secretary of the Audit Committee</td>
+                  <td>Andrzej Witaszek</td>
+                </tr>
+                <tr>
+                  <td>Member of the Audit Committee</td>
+                  <td>Krzysztof Surma</td>
+                </tr>
+                <tr>
+                  <td>Member of the Audit Committee</td>
+                  <td>Piotr Michalik</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="about-table-wrap">
+            <table class="about-table">
+              <thead>
+                <tr>
+                  <th>Position</th>
+                  <th>Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Head of the ZTP Office</td>
+                  <td>Karolina Orlik</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Member Organisations -->
+      <section class="section" id="members">
+
+        <div class="section-heading">
+          <h2>Member organisations</h2>
+        </div>
+
+        <div class="governance-intro">
+          <p>The Federation's membership includes regional carriers' organisations and private passenger transport companies from all over Poland, among them:</p>
+        </div>
+
+        <div class="about-table-wrap">
+          <table class="about-table member-table">
+            <thead>
+              <tr>
+                <th>Member organisation</th>
+                <th>Seat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Stowarzyszenie Małopolskich Przewoźników Prywatnych</td>
+                <td>Kraków</td>
+              </tr>
+              <tr>
+                <td>Dolnośląska Izba Transportu Prywatnego</td>
+                <td>Wrocław</td>
+              </tr>
+              <tr>
+                <td>Związek Przewoźników Autokarowych Podlasia</td>
+                <td>Białystok</td>
+              </tr>
+              <tr>
+                <td>Wielkopolskie Forum Operatorów Transportu</td>
+                <td>Poznań</td>
+              </tr>
+              <tr>
+                <td>Śląskie Porozumienie Przewoźników Prywatnych</td>
+                <td>Katowice</td>
+              </tr>
+              <tr>
+                <td>Podkarpacka Izba Przewoźników Prywatnych</td>
+                <td>Rzeszów</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <!-- Timeline -->
+      <section class="section" id="timeline">
+
+        <div class="section-heading">
+          <h2>Timeline</h2>
+        </div>
+
+        <div class="timeline-panel">
+          <ol class="timeline">
+
+            <li class="timeline-item">
+              <div class="timeline-year">2001</div>
+              <div class="timeline-description">
+                — founding of the Federation; entry into the National Court Register (21 May 2001, KRS 0000013480).
+              </div>
+            </li>
+
+            <li class="timeline-item">
+              <div class="timeline-year">2025</div>
+              <div class="timeline-description">
+                — first edition of the ZTP Innovation in Practice Award; from 54 nominations the jury selects a single winner — Ms. Yanxi Liu (announced 20 November 2025).
+              </div>
+            </li>
+
+            <li class="timeline-item">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-description">
+                — publication of the Scenario Planning Practice Guide (2024 Edition) on 15 December 2024.
+              </div>
+            </li>
+
+          </ol>
+        </div>
+
+      </section>
+
     </div>
-    <div class="header-right">
-      biuro@ztp-federation.org<br>ul. Stefana Bobrowskiego 15, 31-552 Kraków
-      <div class="langpills"><a href="../index.html">PL</a><a class="cur" href="index.html">EN</a></div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-column">
+        <h3>Zrzeszenie Transportu Prywatnego</h3>
+        <p>The national federation of private passenger transport operators, founded in 2001 and based in Kraków.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick links</h3>
+        <div class="footer-links">
+          <a href="/en/about/">About — governance and member organisations</a>
+          <a href="/en/award-2025/">Innovation in Practice Award 2025</a>
+          <a href="/en/guidelines/">Scenario Planning Practice Guide — 2024 Edition</a>
+          <a href="/en/contact/">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <div class="footer-contact">
+          ul. Stefana Bobrowskiego 15<br>
+          31-552 Kraków, Poland<br>
+          <a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a>
+        </div>
+      </div>
+
     </div>
-  </div>
-  <nav class="topnav">
-    <div class="wrap">
-      <a href="index.html">Home</a>
-      <a class="cur" href="about.html">About</a>
-      <a href="award-2025.html">Award 2025</a>
-      <a href="guidelines.html">Guidelines</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-</header>
 
-<div class="crumbs"><div class="wrap"><a href="index.html">Home</a><span>›</span>About</div></div>
-
-<main>
-  <div class="wrap">
-
-    <div class="pagehead">
-      <span class="kicker">About</span>
-      <h2>Private Transport Federation</h2>
-      <p class="lead">We are a nationwide organisation of private passenger transport operators, active without interruption since 2001 in support of private collective transport in Poland.</p>
-    </div>
-
-    <h3 class="sec">History and legal basis</h3>
-    <p>The Private Transport Federation (Zrzeszenie Transportu Prywatnego, ZTP) was founded in 2001. The organisation was entered into the National Court Register (Krajowy Rejestr Sądowy) on 21 May 2001 under number <b>KRS 0000013480</b>; it had previously been listed in the Register of Trade and Services Associations, Transport Associations (Rejestr Zrzeszeń Handlu i Usług, Zrzeszeń Transportu). The Federation's seat is in Kraków, at ul. Stefana Bobrowskiego 15 (31-552 Kraków).</p>
-
-    <h3 class="sec">Mission</h3>
-    <ul>
-      <li>representing the interests of private passenger transport operators vis-à-vis public administration and transport organisers;</li>
-      <li>raising the standards of service quality, safety and organisation of carriage;</li>
-      <li>developing good practice guidelines, including recommended methods for the assessment and ranking of investment projects;</li>
-      <li>organising an industry award for innovations implemented in transport practice;</li>
-      <li>supporting dialogue and the exchange of experience among member organisations.</li>
-    </ul>
-
-    <h3 class="sec">Governance</h3>
-    <p>Under the Federation's statutes, its bodies are the three-member Board (Zarząd) and the five-member Audit Committee (Komisja Rewizyjna). Day-to-day operations are handled by the ZTP Office in Kraków.</p>
-
-    <table class="tbl">
-      <tr><th>Position</th><th>Name</th></tr>
-      <tr><td class="role">President of the Board</td><td class="name">Ewa Napiórkowska</td></tr>
-      <tr><td class="role">Vice-President of the Board</td><td class="name">Halina Dębowska</td></tr>
-      <tr><td class="role">Board Member</td><td class="name">Janusz Gomółka</td></tr>
-    </table>
-
-    <table class="tbl">
-      <tr><th>Position</th><th>Name</th></tr>
-      <tr><td class="role">Chair of the Audit Committee</td><td class="name">Renata Szulc</td></tr>
-      <tr><td class="role">Deputy Chair of the Audit Committee</td><td class="name">Witold Cybulski</td></tr>
-      <tr><td class="role">Secretary of the Audit Committee</td><td class="name">Andrzej Witaszek</td></tr>
-      <tr><td class="role">Member of the Audit Committee</td><td class="name">Krzysztof Surma</td></tr>
-      <tr><td class="role">Member of the Audit Committee</td><td class="name">Piotr Michalik</td></tr>
-    </table>
-
-    <table class="tbl">
-      <tr><th>Position</th><th>Name</th></tr>
-      <tr><td class="role">Head of the ZTP Office</td><td class="name">Karolina Orlik</td></tr>
-    </table>
-
-    <h3 class="sec">Member organisations</h3>
-    <p>The Federation's membership includes regional carriers' organisations and private passenger transport companies from all over Poland, among them:</p>
-
-    <table class="tbl">
-      <tr><th>Member organisation</th><th>Seat</th></tr>
-      <tr><td class="name">Stowarzyszenie Małopolskich Przewoźników Prywatnych</td><td class="org">Kraków</td></tr>
-      <tr><td class="name">Dolnośląska Izba Transportu Prywatnego</td><td class="org">Wrocław</td></tr>
-      <tr><td class="name">Związek Przewoźników Autokarowych Podlasia</td><td class="org">Białystok</td></tr>
-      <tr><td class="name">Wielkopolskie Forum Operatorów Transportu</td><td class="org">Poznań</td></tr>
-      <tr><td class="name">Śląskie Porozumienie Przewoźników Prywatnych</td><td class="org">Katowice</td></tr>
-      <tr><td class="name">Podkarpacka Izba Przewoźników Prywatnych</td><td class="org">Rzeszów</td></tr>
-    </table>
-
-    <h3 class="sec">Timeline</h3>
-    <ul>
-      <li><b>2001</b> — founding of the Federation; entry into the National Court Register (21 May 2001, KRS 0000013480).</li>
-      <li><b>2025</b> — first edition of the ZTP Innovation in Practice Award; from 54 nominations the jury selects a single winner — Ms. Yanxi Liu (announced 20 November 2025).</li>
-      <li><b>2024</b> — publication of the Scenario Planning Practice Guide (2024 Edition) on 15 December 2024.</li>
-    </ul>
-
-  </div>
-</main>
-
-</div>
-<footer class="site">
-  <div class="footer-cols">
-    <div class="col">
-      <h5>Zrzeszenie Transportu Prywatnego</h5>
-      <p>The national federation of private passenger transport operators, founded in 2001 and based in Kraków.</p>
-    </div>
-    <div class="col">
-      <h5>Quick links</h5>
-      <ul>
-        <li><a href="about.html">About — governance and member organisations</a></li>
-        <li><a href="award-2025.html">Innovation in Practice Award 2025</a></li>
-        <li><a href="guidelines.html">Scenario Planning Practice Guide — 2024 Edition</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="col">
-      <h5>Contact</h5>
-      <p>ul. Stefana Bobrowskiego 15<br>31-552 Kraków, Poland<br>biuro@ztp-federation.org</p>
-    </div>
-  </div>
-  <div class="footer-flag"><div class="white"></div><div class="red"></div></div>
-  <div class="footer-bottom">
-    <div class="wrap">
+    <div class="footer-bottom">
       <span>KRS 0000013480 · © 2001–2026 Zrzeszenie Transportu Prywatnego</span>
-      
     </div>
-  </div>
-</footer>
+
+  </footer>
 
 </body>
 </html>
