@@ -1,102 +1,1254 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>Kontakt — Zrzeszenie Transportu Prywatnego</title>
-<meta name="description" content="Dane kontaktowe Zrzeszenia Transportu Prywatnego — adres siedziby, KRS, adresy e-mail.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6b1a1a">
+  <title>Kontakt | Zrzeszenie Transportu Prywatnego</title>
+  <style>
+    :root {
+      --red: #6b1a1a;
+      --red-dark: #501313;
+      --red-light: #8b3030;
+      --bg: #f4f4f2;
+      --white: #ffffff;
+      --text: #292929;
+      --muted: #777777;
+      --line: #dededb;
+      --soft: #efefec;
+      --sidebar-width: 232px;
+      --font: Tahoma, Verdana, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 35px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-strip {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: var(--sidebar-width);
+      right: 0;
+      height: 8px;
+      background: var(--red);
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      position: fixed;
+      z-index: 90;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--sidebar-width);
+      display: flex;
+      flex-direction: column;
+      background: var(--red);
+      color: #fff;
+      padding: 38px 0 25px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand {
+      display: block;
+      padding: 0 23px 27px;
+      border-bottom: 1px solid rgba(255,255,255,.19);
+    }
+
+    .brand-name {
+      display: block;
+      max-width: 185px;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.5px;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 12px;
+      color: rgba(255,255,255,.73);
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .nav-label {
+      padding: 29px 23px 12px;
+      color: rgba(255,255,255,.5);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 0 12px;
+    }
+
+    .side-nav a {
+      position: relative;
+      display: block;
+      padding: 12px 12px 12px 19px;
+      border-left: 3px solid transparent;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      transition: background .2s, color .2s;
+    }
+
+    .side-nav a:hover,
+    .side-nav a.active {
+      background: rgba(255,255,255,.12);
+      border-left-color: #fff;
+      color: #fff;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      padding: 20px 23px 0;
+      border-top: 1px solid rgba(255,255,255,.19);
+      color: rgba(255,255,255,.7);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .sidebar-bottom strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    /* Main layout */
+
+    .main {
+      min-height: 100vh;
+      margin-left: var(--sidebar-width);
+      padding-top: 8px;
+    }
+
+    .top-header {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 34px;
+      padding: 12px 6.2%;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #555;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .contact-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid #e4e0dc;
+      color: var(--red);
+      font-size: 13px;
+    }
+
+    .contact-item a:hover {
+      color: var(--red);
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-left: 22px;
+      border-left: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    .language a {
+      padding: 5px 8px;
+      color: #777;
+    }
+
+    .language a:first-child {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .content {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 43px 6.2% 70px;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 48px 45px 44px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .hero::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 190px;
+      height: 190px;
+      border-right: 1px solid #ece9e5;
+      border-top: 1px solid #ece9e5;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 4px 11px;
+      background: #f2eaea;
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      margin: 0 0 20px;
+      color: #282525;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.8px;
+    }
+
+    .hero p {
+      max-width: 770px;
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 43px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 21px;
+      border: 1px solid var(--red);
+      background: var(--red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background .2s, color .2s;
+    }
+
+    .button:hover {
+      background: var(--red-dark);
+    }
+
+    .button-outline {
+      background: #fff;
+      color: var(--red);
+    }
+
+    .button-outline:hover {
+      background: #f6eeee;
+      color: var(--red-dark);
+    }
+
+    /* Statistics */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 23px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 19px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-number {
+      color: var(--red);
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .stat-label {
+      margin-top: 6px;
+      color: #777;
+      font-size: 11px;
+    }
+
+    /* Sections */
+
+    .section {
+      margin-top: 54px;
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: #292929;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .section-heading::after {
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      content: "";
+    }
+
+    /* Activities */
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .activity-card {
+      min-height: 215px;
+      padding: 24px 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--red);
+    }
+
+    .activity-index {
+      display: block;
+      margin-bottom: 15px;
+      color: #b9a3a0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .activity-card h3 {
+      margin: 0 0 12px;
+      color: var(--red);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .activity-card p {
+      margin: 0;
+      color: #707070;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* News table */
+
+    .news-table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .news-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .news-table thead {
+      background: #f0efed;
+    }
+
+    .news-table th {
+      padding: 13px 19px;
+      border-bottom: 1px solid var(--line);
+      color: #777;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .news-table td {
+      padding: 21px 19px;
+      border-bottom: 1px solid #eae9e6;
+      vertical-align: top;
+    }
+
+    .news-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .news-table tbody tr:hover {
+      background: #faf9f7;
+    }
+
+    .news-date {
+      width: 150px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .news-content h3 {
+      margin: 0 0 8px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .news-content p {
+      margin: 0;
+      color: #777;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* Award */
+
+    .award-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .award-header {
+      padding: 22px 27px;
+      background: #f8f7f5;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .award-header h3 {
+      margin: 0;
+      color: var(--red);
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .award-meta {
+      margin-top: 9px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .award-body {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 25px;
+      padding: 28px;
+    }
+
+    .award-recipient {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      background: #f5f0ee;
+      border: 1px solid #e8dedd;
+      text-align: center;
+    }
+
+    .award-recipient-label {
+      margin-bottom: 12px;
+      color: #8a7774;
+      font-size: 11px;
+    }
+
+    .award-recipient-name {
+      color: var(--red);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .award-description {
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .award-description p {
+      margin: 0;
+    }
+
+    .award-link {
+      display: inline-block;
+      margin-top: 17px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--red);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .award-link:hover {
+      color: var(--red-dark);
+      border-color: var(--red-dark);
+    }
+
+    /* Contact page */
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+      color: #999;
+      font-size: 11px;
+    }
+
+    .breadcrumb a {
+      color: #777;
+      transition: color .2s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--red);
+    }
+
+    .breadcrumb-current {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 39px;
+    }
+
+    .contact-panel {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .contact-panel-header {
+      padding: 23px 28px;
+      background: #f8f7f5;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-panel-header h2 {
+      margin: 0;
+      color: var(--red);
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .contact-panel-body {
+      padding: 29px 28px;
+    }
+
+    .office-card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .office-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5eeee;
+      border: 1px solid #e8dedd;
+      color: var(--red);
+      font-size: 23px;
+    }
+
+    .office-details h3 {
+      margin: 0 0 12px;
+      color: #333;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .office-address {
+      margin: 0 0 17px;
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .office-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      padding-top: 17px;
+      border-top: 1px solid #eceae7;
+      color: #777;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .office-meta strong {
+      color: #444;
+      font-weight: 700;
+    }
+
+    .email-table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .email-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .email-table thead {
+      background: #f0efed;
+    }
+
+    .email-table th {
+      padding: 14px 21px;
+      border-bottom: 1px solid var(--line);
+      color: #777;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .email-table td {
+      padding: 19px 21px;
+      border-bottom: 1px solid #eae9e6;
+      color: #555;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+
+    .email-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .email-table tbody tr:hover {
+      background: #faf9f7;
+    }
+
+    .email-table td:first-child {
+      width: 57%;
+      color: #444;
+      font-weight: 700;
+    }
+
+    .email-table a {
+      color: var(--red);
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    .email-table a:hover {
+      color: var(--red-dark);
+      text-decoration: underline;
+    }
+
+    .contact-note {
+      position: relative;
+      margin-top: 24px;
+      padding: 22px 26px 22px 30px;
+      background: #f8f5f3;
+      border: 1px solid #e8e1dd;
+      border-left: 4px solid var(--red);
+      color: #69615e;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    /* Footer */
+
+    .footer {
+      margin-left: var(--sidebar-width);
+      background: #292727;
+      color: #d5d1cf;
+    }
+
+    .footer-inner {
+      width: min(1120px, 100%);
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      gap: 48px;
+      margin: 0 auto;
+      padding: 48px 6.2% 42px;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .footer-column p {
+      margin: 0;
+      color: #aaa5a2;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 1.7;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-contact {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 2.1;
+    }
+
+    .footer-contact a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 59px;
+      padding: 12px 6.2%;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #96908d;
+      font-size: 11px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1050px) {
+      .content {
+        padding: 38px 5% 60px;
+      }
+
+      .footer-inner {
+        gap: 30px;
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+
+      .activity-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .top-header {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --sidebar-width: 0px;
+      }
+
+      .top-strip {
+        position: absolute;
+        left: 0;
+        height: 6px;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 22px 0 15px;
+      }
+
+      .brand {
+        padding: 0 22px 17px;
+      }
+
+      .brand-name {
+        max-width: none;
+        font-size: 19px;
+      }
+
+      .brand-subtitle {
+        margin-top: 6px;
+      }
+
+      .nav-label {
+        padding: 16px 22px 9px;
+      }
+
+      .side-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 0 12px;
+      }
+
+      .side-nav a {
+        padding: 8px 10px;
+        border-left: 0;
+        border-bottom: 2px solid transparent;
+        font-size: 12px;
+      }
+
+      .side-nav a:hover,
+      .side-nav a.active {
+        border-left-color: transparent;
+        border-bottom-color: #fff;
+      }
+
+      .sidebar-bottom {
+        display: none;
+      }
+
+      .main {
+        margin-left: 0;
+        padding-top: 0;
+      }
+
+      .top-header {
+        min-height: 65px;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 5%;
+      }
+
+      .contact-item {
+        font-size: 11px;
+      }
+
+      .contact-icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      .language {
+        padding-left: 10px;
+      }
+
+      .content {
+        padding: 29px 5% 50px;
+      }
+
+      .hero {
+        padding: 34px 27px 32px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .section {
+        margin-top: 40px;
+      }
+
+      .section-heading h2 {
+        font-size: 19px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .award-body {
+        grid-template-columns: 1fr;
+      }
+
+      .award-recipient {
+        min-height: 135px;
+      }
+
+      .footer {
+        margin-left: 0;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 38px 5% 32px;
+      }
+
+      .footer-column:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+
+      .contact-layout {
+        margin-top: 30px;
+      }
+
+      .contact-panel-header {
+        padding: 20px 22px;
+      }
+
+      .contact-panel-body {
+        padding: 24px 22px;
+      }
+
+      .email-table th,
+      .email-table td {
+        padding: 15px 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-header {
+        flex-wrap: wrap;
+      }
+
+      .contact-item {
+        gap: 7px;
+      }
+
+      .language {
+        gap: 2px;
+        padding-left: 8px;
+      }
+
+      .content {
+        padding-right: 18px;
+        padding-left: 18px;
+      }
+
+      .hero {
+        padding: 29px 21px;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .section-heading {
+        gap: 11px;
+      }
+
+      .section-heading h2 {
+        font-size: 18px;
+      }
+
+      .office-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .office-icon {
+        width: 46px;
+        height: 46px;
+      }
+
+      .email-table {
+        min-width: 480px;
+      }
+
+      .contact-note {
+        padding: 18px 18px 18px 21px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 27px;
+      }
+
+      .footer-column:first-child {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="flagband"><div class="white"></div><div class="red"></div></div>
+  <div class="top-strip"></div>
 
-<header class="site">
-  <div class="header-inner">
-    <div class="brand">
-      <div class="mark"><img src="favicon.svg" alt="Godło ZTP" width="58" height="58"></div>
-      <div>
-        <h1>Zrzeszenie Transportu Prywatnego</h1>
-        <div class="tagline">Kraków · od 2001 roku</div>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="#" class="brand">
+      <span class="brand-name">Zrzeszenie Transportu Prywatnego</span>
+      <span class="brand-subtitle">Kraków · od 2001 roku</span>
+    </a>
+
+    <div class="nav-label">Menu</div>
+
+    <nav class="side-nav" aria-label="Nawigacja główna">
+      <a href="#">Strona główna</a>
+      <a href="#">O nas</a>
+      <a href="#">Nagroda 2025</a>
+      <a href="#">Wytyczne</a>
+      <a href="#kontakt" class="active">Kontakt</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <strong>Zrzeszenie Transportu Prywatnego</strong>
+      ul. Stefana Bobrowskiego 15<br>
+      31-552 Kraków, Polska
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Header -->
+    <header class="top-header">
+      <div class="contact-item">
+        <span class="contact-icon" aria-hidden="true">✉</span>
+        <a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a>
       </div>
-    </div>
-    <div class="header-right">
-      biuro@ztp-federation.org<br>ul. Stefana Bobrowskiego 15, 31-552 Kraków
-      <div class="langpills"><a class="cur" href="index.html">PL</a><a href="en/index.html">EN</a></div>
-    </div>
-  </div>
-  <nav class="topnav">
-    <div class="wrap">
-      <a href="index.html">Strona główna</a>
-      <a href="o-nas.html">O nas</a>
-      <a href="nagroda-2025.html">Nagroda 2025</a>
-      <a href="wytyczne.html">Wytyczne</a>
-      <a class="cur" href="kontakt.html">Kontakt</a>
-    </div>
-  </nav>
-</header>
 
-<div class="crumbs"><div class="wrap"><a href="index.html">Strona główna</a><span>›</span>Kontakt</div></div>
+      <div class="contact-item">
+        <span class="contact-icon" aria-hidden="true">⌖</span>
+        <span>ul. Stefana Bobrowskiego 15, 31-552 Kraków</span>
+      </div>
 
-<main>
-  <div class="wrap">
+      <div class="language" aria-label="Wybór języka">
+        <a href="#">PL</a>
+        <a href="#">EN</a>
+      </div>
+    </header>
 
-    <div class="pagehead">
-      <span class="kicker">Kontakt</span>
-      <h2>Skontaktuj się ze Zrzeszeniem</h2>
-      <p class="lead">Biuro ZTP w Krakowie odpowiada na pytania organizacji członkowskich, operatorów przewozów, przedstawicieli samorządów oraz mediów.</p>
+    <!-- Page content -->
+    <div class="content">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Okruszki nawigacyjne">
+        <a href="#">Strona główna</a>
+        <span aria-hidden="true">›</span>
+        <span class="breadcrumb-current">Kontakt</span>
+      </nav>
+
+      <!-- Hero -->
+      <section class="hero" id="kontakt">
+        <span class="eyebrow">Kontakt</span>
+        <h1>Skontaktuj się ze Zrzeszeniem</h1>
+        <p>
+          Biuro ZTP w Krakowie odpowiada na pytania organizacji członkowskich, operatorów przewozów, przedstawicieli samorządów oraz mediów.
+        </p>
+      </section>
+
+      <!-- Office address -->
+      <div class="contact-layout">
+        <section class="contact-panel" aria-labelledby="office-heading">
+          <div class="contact-panel-header">
+            <h2 id="office-heading">Siedziba Zrzeszenia</h2>
+          </div>
+
+          <div class="contact-panel-body">
+            <div class="office-card">
+              <div class="office-icon" aria-hidden="true">⌖</div>
+
+              <div class="office-details">
+                <h3>Biuro ZTP</h3>
+
+                <address class="office-address" style="font-style: normal;">
+                  ul. Stefana Bobrowskiego 15<br>
+                  31-552 Kraków, Polska
+                </address>
+
+                <div class="office-meta">
+                  <div>
+                    <strong>Krajowy Rejestr Sądowy:</strong><br>
+                    KRS 0000013480
+                  </div>
+
+                  <div>
+                    <strong>Godziny pracy biura:</strong><br>
+                    poniedziałek–piątek, 9:00–16:00
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Email addresses -->
+      <section class="section" aria-labelledby="email-heading">
+        <div class="section-heading">
+          <h2 id="email-heading">Adresy e-mail</h2>
+        </div>
+
+        <div class="email-table-wrap">
+          <table class="email-table">
+            <thead>
+              <tr>
+                <th scope="col">Sprawa</th>
+                <th scope="col">Adres e-mail</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Sprawy ogólne i członkowskie</td>
+                <td>
+                  <a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Nagroda ZTP za Innowacje w Praktyce</td>
+                <td>
+                  <a href="mailto:nagroda@ztp-federation.org">nagroda@ztp-federation.org</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Wytyczne planowania scenariuszowego</td>
+                <td>
+                  <a href="mailto:wytyczne@ztp-federation.org">wytyczne@ztp-federation.org</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="contact-note">
+          Korespondencję tradycyjną prosimy kierować na adres siedziby Biura ZTP w Krakowie. Zgłoszenia członkowskie przyjmuje Kierowniczka Biura — Karolina Orlik.
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-column">
+        <h3>Zrzeszenie Transportu Prywatnego</h3>
+        <p>
+          Ogólnokrajowa organizacja prywatnych przewoźników transportu pasażerskiego, założona w 2001 roku, z siedzibą w Krakowie.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Na skróty</h3>
+        <nav class="footer-links" aria-label="Na skróty">
+          <a href="#">O nas — władze i organizacje członkowskie</a>
+          <a href="#">Nagroda za Innowacje w Praktyce 2025</a>
+          <a href="#">Wytyczne planowania scenariuszowego — wydanie 2024</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+      </div>
+
+      <div class="footer-column">
+        <h3>Kontakt</h3>
+        <div class="footer-contact">
+          ul. Stefana Bobrowskiego 15<br>
+          31-552 Kraków, Polska<br>
+          <a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a>
+        </div>
+      </div>
+
     </div>
 
-    <h3 class="sec">Siedziba Zrzeszenia</h3>
-    <div class="card" style="max-width:560px;">
-      <h4>Biuro ZTP</h4>
-      <p>ul. Stefana Bobrowskiego 15<br>31-552 Kraków, Polska</p>
-      <p>Krajowy Rejestr Sądowy: <b>KRS 0000013480</b><br>Godziny pracy biura: poniedziałek–piątek, 9:00–16:00</p>
-    </div>
-
-    <h3 class="sec">Adresy e-mail</h3>
-    <table class="tbl" style="max-width:640px;">
-      <tr><th>Sprawa</th><th>Adres e-mail</th></tr>
-      <tr><td class="role">Sprawy ogólne i członkowskie</td><td class="name"><a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a></td></tr>
-      <tr><td class="role">Nagroda ZTP za Innowacje w Praktyce</td><td class="name"><a href="mailto:nagroda@ztp-federation.org">nagroda@ztp-federation.org</a></td></tr>
-      <tr><td class="role">Wytyczne planowania scenariuszowego</td><td class="name"><a href="mailto:wytyczne@ztp-federation.org">wytyczne@ztp-federation.org</a></td></tr>
-    </table>
-
-    <div class="note">Korespondencję tradycyjną prosimy kierować na adres siedziby Biura ZTP w Krakowie. Zgłoszenia członkowskie przyjmuje Kierowniczka Biura — Karolina Orlik.</div>
-
-  </div>
-</main>
-
-<footer class="site">
-  <div class="footer-cols">
-    <div class="col">
-      <h5>Zrzeszenie Transportu Prywatnego</h5>
-      <p>Ogólnokrajowa organizacja prywatnych przewoźników transportu pasażerskiego, założona w 2001 roku, z siedzibą w Krakowie.</p>
-    </div>
-    <div class="col">
-      <h5>Na skróty</h5>
-      <ul>
-        <li><a href="o-nas.html">O nas — władze i organizacje członkowskie</a></li>
-        <li><a href="nagroda-2025.html">Nagroda za Innowacje w Praktyce 2025</a></li>
-        <li><a href="wytyczne.html">Wytyczne planowania scenariuszowego — wydanie 2024</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-    <div class="col">
-      <h5>Kontakt</h5>
-      <p>ul. Stefana Bobrowskiego 15<br>31-552 Kraków, Polska<br>biuro@ztp-federation.org</p>
-    </div>
-  </div>
-  <div class="footer-flag"><div class="white"></div><div class="red"></div></div>
-  <div class="footer-bottom">
-    <div class="wrap">
+    <div class="footer-bottom">
       <span>KRS 0000013480 · © 2001–2026 Zrzeszenie Transportu Prywatnego</span>
-      
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>

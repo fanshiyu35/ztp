@@ -1,145 +1,1136 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>Zrzeszenie Transportu Prywatnego — strona główna</title>
-<meta name="description" content="Zrzeszenie Transportu Prywatnego (ZTP) — ogólnokrajowa organizacja prywatnych przewoźników, Kraków, od 2001 roku.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6b1a1a">
+  <title>Zrzeszenie Transportu Prywatnego</title>
+  <style>
+    :root {
+      --red: #6b1a1a;
+      --red-dark: #501313;
+      --red-light: #8b3030;
+      --bg: #f4f4f2;
+      --white: #ffffff;
+      --text: #292929;
+      --muted: #777777;
+      --line: #dededb;
+      --soft: #efefec;
+      --sidebar-width: 232px;
+      --font: Tahoma, Verdana, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 35px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-strip {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: var(--sidebar-width);
+      right: 0;
+      height: 8px;
+      background: var(--red);
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      position: fixed;
+      z-index: 90;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--sidebar-width);
+      display: flex;
+      flex-direction: column;
+      background: var(--red);
+      color: #fff;
+      padding: 38px 0 25px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand {
+      display: block;
+      padding: 0 23px 27px;
+      border-bottom: 1px solid rgba(255,255,255,.19);
+    }
+
+    .brand-name {
+      display: block;
+      max-width: 185px;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.5px;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 12px;
+      color: rgba(255,255,255,.73);
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .nav-label {
+      padding: 29px 23px 12px;
+      color: rgba(255,255,255,.5);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 0 12px;
+    }
+
+    .side-nav a {
+      position: relative;
+      display: block;
+      padding: 12px 12px 12px 19px;
+      border-left: 3px solid transparent;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      transition: background .2s, color .2s;
+    }
+
+    .side-nav a:hover,
+    .side-nav a.active {
+      background: rgba(255,255,255,.12);
+      border-left-color: #fff;
+      color: #fff;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      padding: 20px 23px 0;
+      border-top: 1px solid rgba(255,255,255,.19);
+      color: rgba(255,255,255,.7);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .sidebar-bottom strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    /* Main layout */
+
+    .main {
+      min-height: 100vh;
+      margin-left: var(--sidebar-width);
+      padding-top: 8px;
+    }
+
+    .top-header {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 34px;
+      padding: 12px 6.2%;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #555;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .contact-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid #e4e0dc;
+      color: var(--red);
+      font-size: 13px;
+    }
+
+    .contact-item a:hover {
+      color: var(--red);
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-left: 22px;
+      border-left: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    .language a {
+      padding: 5px 8px;
+      color: #777;
+    }
+
+    .language a:first-child {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .content {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 43px 6.2% 70px;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 48px 45px 44px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .hero::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 190px;
+      height: 190px;
+      border-right: 1px solid #ece9e5;
+      border-top: 1px solid #ece9e5;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 4px 11px;
+      background: #f2eaea;
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      margin: 0 0 20px;
+      color: #282525;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.8px;
+    }
+
+    .hero p {
+      max-width: 770px;
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 43px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 21px;
+      border: 1px solid var(--red);
+      background: var(--red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background .2s, color .2s;
+    }
+
+    .button:hover {
+      background: var(--red-dark);
+    }
+
+    .button-outline {
+      background: #fff;
+      color: var(--red);
+    }
+
+    .button-outline:hover {
+      background: #f6eeee;
+      color: var(--red-dark);
+    }
+
+    /* Statistics */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 23px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 19px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-number {
+      color: var(--red);
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .stat-label {
+      margin-top: 6px;
+      color: #777;
+      font-size: 11px;
+    }
+
+    /* Sections */
+
+    .section {
+      margin-top: 54px;
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: #292929;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .section-heading::after {
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      content: "";
+    }
+
+    /* Activities */
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .activity-card {
+      min-height: 215px;
+      padding: 24px 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--red);
+    }
+
+    .activity-index {
+      display: block;
+      margin-bottom: 15px;
+      color: #b9a3a0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .activity-card h3 {
+      margin: 0 0 12px;
+      color: var(--red);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .activity-card p {
+      margin: 0;
+      color: #707070;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* News table */
+
+    .news-table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .news-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .news-table thead {
+      background: #f0efed;
+    }
+
+    .news-table th {
+      padding: 13px 19px;
+      border-bottom: 1px solid var(--line);
+      color: #777;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .news-table td {
+      padding: 21px 19px;
+      border-bottom: 1px solid #eae9e6;
+      vertical-align: top;
+    }
+
+    .news-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .news-table tbody tr:hover {
+      background: #faf9f7;
+    }
+
+    .news-date {
+      width: 150px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .news-content h3 {
+      margin: 0 0 8px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .news-content p {
+      margin: 0;
+      color: #777;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* Award */
+
+    .award-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .award-header {
+      padding: 22px 27px;
+      background: #f8f7f5;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .award-header h3 {
+      margin: 0;
+      color: var(--red);
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .award-meta {
+      margin-top: 9px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .award-body {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 25px;
+      padding: 28px;
+    }
+
+    .award-recipient {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      background: #f5f0ee;
+      border: 1px solid #e8dedd;
+      text-align: center;
+    }
+
+    .award-recipient-label {
+      margin-bottom: 12px;
+      color: #8a7774;
+      font-size: 11px;
+    }
+
+    .award-recipient-name {
+      color: var(--red);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .award-description {
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .award-description p {
+      margin: 0;
+    }
+
+    .award-link {
+      display: inline-block;
+      margin-top: 17px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--red);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .award-link:hover {
+      color: var(--red-dark);
+      border-color: var(--red-dark);
+    }
+
+    /* Footer */
+
+    .footer {
+      margin-left: var(--sidebar-width);
+      background: #292727;
+      color: #d5d1cf;
+    }
+
+    .footer-inner {
+      width: min(1120px, 100%);
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      gap: 48px;
+      margin: 0 auto;
+      padding: 48px 6.2% 42px;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .footer-column p {
+      margin: 0;
+      color: #aaa5a2;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 1.7;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-contact {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 2.1;
+    }
+
+    .footer-contact a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 59px;
+      padding: 12px 6.2%;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #96908d;
+      font-size: 11px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1050px) {
+      .content {
+        padding-right: 4%;
+        padding-left: 4%;
+      }
+
+      .top-header {
+        padding-right: 4%;
+        padding-left: 4%;
+        gap: 18px;
+      }
+
+      .hero {
+        padding: 38px 32px;
+      }
+
+      .activity-grid {
+        gap: 12px;
+      }
+
+      .activity-card {
+        padding: 20px 17px;
+      }
+
+      .footer-inner {
+        gap: 25px;
+        padding-right: 4%;
+        padding-left: 4%;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --sidebar-width: 0px;
+      }
+
+      .top-strip {
+        left: 0;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px 18px 12px;
+      }
+
+      .brand {
+        padding: 0 3px 17px;
+      }
+
+      .brand-name {
+        max-width: none;
+        font-size: 19px;
+      }
+
+      .brand-subtitle {
+        margin-top: 5px;
+      }
+
+      .nav-label,
+      .sidebar-bottom {
+        display: none;
+      }
+
+      .side-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 12px 0 0;
+      }
+
+      .side-nav a {
+        padding: 7px 10px;
+        border-left: 0;
+        border-bottom: 2px solid transparent;
+        font-size: 11px;
+      }
+
+      .side-nav a:hover,
+      .side-nav a.active {
+        border-bottom-color: #fff;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .top-header {
+        min-height: 65px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 12px 20px;
+      }
+
+      .contact-item {
+        font-size: 11px;
+      }
+
+      .contact-icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      .language {
+        padding-left: 10px;
+      }
+
+      .content {
+        padding: 25px 18px 45px;
+      }
+
+      .hero {
+        padding: 30px 23px;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-card {
+        min-height: auto;
+      }
+
+      .section {
+        margin-top: 40px;
+      }
+
+      .section-heading h2 {
+        font-size: 19px;
+      }
+
+      .news-table {
+        min-width: 570px;
+      }
+
+      .award-body {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 20px;
+      }
+
+      .award-recipient {
+        min-height: 125px;
+      }
+
+      .footer {
+        margin-left: 0;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 35px 22px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        padding: 15px 22px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .top-header {
+        align-items: flex-start;
+      }
+
+      .contact-item {
+        max-width: 75%;
+      }
+
+      .hero h1 {
+        font-size: 23px;
+      }
+
+      .stats .stat {
+        padding: 16px;
+      }
+
+      .stat-number {
+        font-size: 24px;
+      }
+
+      .section-heading {
+        gap: 10px;
+      }
+
+      .section-heading h2 {
+        font-size: 17px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="flagband"><div class="white"></div><div class="red"></div></div>
+  <div class="top-strip"></div>
 
-<header class="site">
-  <div class="header-inner">
-    <div class="brand">
-      <div class="mark"><img src="favicon.svg" alt="Godło ZTP" width="58" height="58"></div>
-      <div>
-        <h1>Zrzeszenie Transportu Prywatnego</h1>
-        <div class="tagline">Kraków · od 2001 roku</div>
+  <aside class="sidebar">
+
+    <a class="brand" href="#home">
+      <span class="brand-name">Zrzeszenie Transportu Prywatnego</span>
+      <span class="brand-subtitle">Kraków · od 2001 roku</span>
+    </a>
+
+    <div class="nav-label">Menu główne</div>
+
+    <nav class="side-nav" aria-label="Nawigacja główna">
+      <a class="active" href="#home">Strona główna</a>
+      <a href="#about">O nas</a>
+      <a href="#award">Nagroda 2025</a>
+      <a href="#guidelines">Wytyczne</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <strong>Zrzeszenie Transportu Prywatnego</strong>
+      Kraków · od 2001 roku
+    </div>
+
+  </aside>
+
+  <main class="main" id="home">
+
+    <header class="top-header">
+
+      <div class="contact-item">
+        <span class="contact-icon" aria-hidden="true">✉</span>
+        <a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a>
       </div>
-    </div>
-    <div class="header-right">
-      biuro@ztp-federation.org<br>ul. Stefana Bobrowskiego 15, 31-552 Kraków
-      <div class="langpills"><a class="cur" href="index.html">PL</a><a href="en/index.html">EN</a></div>
-    </div>
-  </div>
-  <nav class="topnav">
-    <div class="wrap">
-      <a class="cur" href="index.html">Strona główna</a>
-      <a href="o-nas.html">O nas</a>
-      <a href="nagroda-2025.html">Nagroda 2025</a>
-      <a href="wytyczne.html">Wytyczne</a>
-      <a href="kontakt.html">Kontakt</a>
-    </div>
-  </nav>
-</header>
 
-<div class="hero">
-  <div class="wrap">
-    <h2>Od 2001 roku reprezentujemy prywatnych przewoźników w całej Polsce</h2>
-    <p class="lead">Zrzeszenie Transportu Prywatnego (ZTP) z siedzibą w Krakowie zrzesza prywatne przedsiębiorstwa i organizacje transportu pasażerskiego. Działamy na rzecz dobrych standardów branży, rzetelnej oceny inwestycji i współpracy z organizatorami przewozów.</p>
-    <div class="cta">
-      <a class="btn amber" href="nagroda-2025.html">Nagroda ZTP 2025 — wyniki</a>
-      <a class="btn outline" href="o-nas.html">Poznaj Zrzeszenie</a>
-    </div>
-  </div>
-</div>
-
-<main>
-  <div class="wrap">
-
-    <div class="stats">
-      <div class="stat"><div class="num">2001</div><div class="lbl">rok założenia</div></div>
-      <div class="stat"><div class="num">3 + 5</div><div class="lbl">Zarząd i Komisja Rewizyjna</div></div>
-      <div class="stat"><div class="num">54</div><div class="lbl">nominacje do Nagrody 2025</div></div>
-      <div class="stat"><div class="num">2024</div><div class="lbl">wydanie Wytycznych</div></div>
-    </div>
-
-    <h3 class="sec">Czym się zajmujemy</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>Reprezentacja branży</h4>
-        <p>Reprezentujemy interesy prywatnych przewoźników w kontaktach z administracją publiczną, samorządami i organizatorami przewozów na szczeblu krajowym i regionalnym.</p>
+      <div class="contact-item">
+        <span class="contact-icon" aria-hidden="true">⌖</span>
+        <span>ul. Stefana Bobrowskiego 15, 31-552 Kraków</span>
       </div>
-      <div class="card amber">
-        <h4>Standardy i wytyczne</h4>
-        <p>Opracowujemy i publikujemy wytyczne planowania scenariuszowego dla prywatnego transportu zbiorowego, w tym zalecane metody oceny i rankingu projektów inwestycyjnych.</p>
+
+      <div class="language" aria-label="Language">
+        <a href="#" lang="pl">PL</a>
+        <a href="#" lang="en">EN</a>
       </div>
-      <div class="card">
-        <h4>Współpraca i dialog</h4>
-        <p>Tworzymy płaszczyznę wymiany doświadczeń między operatorami, organizujemy spotkania branżowe oraz doroczne Walne Zebranie Członków.</p>
+
+    </header>
+
+    <div class="content">
+
+      <!-- Hero -->
+
+      <section class="hero">
+
+        <span class="eyebrow">Zrzeszenie Transportu Prywatnego</span>
+
+        <h1>Od 2001 roku reprezentujemy prywatnych przewoźników w całej Polsce</h1>
+
+        <p>
+          Zrzeszenie Transportu Prywatnego (ZTP) z siedzibą w Krakowie zrzesza prywatne przedsiębiorstwa i organizacje transportu pasażerskiego. Działamy na rzecz dobrych standardów branży, rzetelnej oceny inwestycji i współpracy z organizatorami przewozów.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="#award">Nagroda ZTP 2025 — wyniki</a>
+          <a class="button button-outline" href="#about">Poznaj Zrzeszenie</a>
+        </div>
+
+      </section>
+
+      <!-- Statistics -->
+
+      <section class="stats" aria-label="Informacje o Zrzeszeniu">
+
+        <div class="stat">
+          <span class="stat-number">2001</span>
+          <span class="stat-label">rok założenia</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-number">3 + 5</span>
+          <span class="stat-label">Zarząd i Komisja Rewizyjna</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-number">54</span>
+          <span class="stat-label">nominacje do Nagrody 2025</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-number">2024</span>
+          <span class="stat-label">wydanie Wytycznych</span>
+        </div>
+
+      </section>
+
+      <!-- About -->
+
+      <section class="section" id="about">
+
+        <div class="section-heading">
+          <h2>Czym się zajmujemy</h2>
+        </div>
+
+        <div class="activity-grid">
+
+          <article class="activity-card">
+            <span class="activity-index">01</span>
+            <h3>Reprezentacja branży</h3>
+            <p>
+              Reprezentujemy interesy prywatnych przewoźników w kontaktach z administracją publiczną, samorządami i organizatorami przewozów na szczeblu krajowym i regionalnym.
+            </p>
+          </article>
+
+          <article class="activity-card" id="guidelines">
+            <span class="activity-index">02</span>
+            <h3>Standardy i wytyczne</h3>
+            <p>
+              Opracowujemy i publikujemy wytyczne planowania scenariuszowego dla prywatnego transportu zbiorowego, w tym zalecane metody oceny i rankingu projektów inwestycyjnych.
+            </p>
+          </article>
+
+          <article class="activity-card">
+            <span class="activity-index">03</span>
+            <h3>Współpraca i dialog</h3>
+            <p>
+              Tworzymy płaszczyznę wymiany doświadczeń między operatorami, organizujemy spotkania branżowe oraz doroczne Walne Zebranie Członków.
+            </p>
+          </article>
+
+        </div>
+
+      </section>
+
+      <!-- News -->
+
+      <section class="section" id="news">
+
+        <div class="section-heading">
+          <h2>Aktualności i archiwum</h2>
+        </div>
+
+        <div class="news-table-wrap">
+
+          <table class="news-table">
+
+            <thead>
+              <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Informacja</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td class="news-date">20 listopada 2025</td>
+                <td class="news-content">
+                  <h3>Ogłoszenie wyników Nagrody ZTP za Innowacje w Praktyce 2025</h3>
+                  <p>
+                    Spośród 54 zgłoszonych nominacji siedmioosobowe jury wybrało jedną laureatkę. Nagrodę otrzymała Yanxi Liu z National Transport Research Programme (NTRP) — za opracowanie i praktyczne zastosowanie metody SDI-BCA.
+                  </p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="news-date">15 grudnia 2024</td>
+                <td class="news-content">
+                  <h3>Nowe wydanie Wytycznych planowania scenariuszowego — wydanie 2024</h3>
+                  <p>
+                    Zrzeszenie opublikowało wydanie 2024 Wytycznych planowania scenariuszowego. Rozdział 6 poświęcony ocenie i rankingowi projektów inwestycyjnych zaleca stosowanie testu MTRS jako procedury uzupełniającej.
+                  </p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="news-date">12 czerwca 2025</td>
+                <td class="news-content">
+                  <h3>Walne Zebranie Członków ZTP w Krakowie</h3>
+                  <p>
+                    Podczas dorocznego Walnego Zebrania w Krakowie podsumowano działalność Zrzeszenia w roku 2024 oraz przyjęto plan prac na rok bieżący, obejmujący dalszy rozwój Wytycznych planowania scenariuszowego.
+                  </p>
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+      <!-- Award -->
+
+      <section class="section" id="award">
+
+        <div class="section-heading">
+          <h2>Nagroda ZTP za Innowacje w Praktyce</h2>
+        </div>
+
+        <div class="award-panel">
+
+          <div class="award-header">
+            <h3>Nagroda ZTP za Innowacje w Praktyce</h3>
+            <div class="award-meta">
+              Edycja 2025 · 54 nominacje · 1 laureat · jury 7 osób
+            </div>
+          </div>
+
+          <div class="award-body">
+
+            <div class="award-recipient">
+              <span class="award-recipient-label">Laureatka:</span>
+              <span class="award-recipient-name">Yanxi Liu</span>
+            </div>
+
+            <div class="award-description">
+              <p>
+                National Transport Research Programme (NTRP) — nagroda za opracowanie i zastosowanie w praktyce metody SDI-BCA (Staged-Delay-Inclusive Benefit-Cost Analysis). Ogłoszenie wyników: 20 listopada 2025 r. · Uroczyste wręczenie: 5 grudnia 2025 r., Kraków.
+              </p>
+
+              <a class="award-link" href="#award">
+                Szczegóły edycji 2025, regulamin i skład jury →
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+
+  <footer class="footer" id="contact">
+
+    <div class="footer-inner">
+
+      <div class="footer-column">
+
+        <h3>Zrzeszenie Transportu Prywatnego</h3>
+
+        <p>
+          Ogólnokrajowa organizacja prywatnych przewoźników transportu pasażerskiego, założona w 2001 roku, z siedzibą w Krakowie.
+        </p>
+
       </div>
-    </div>
 
-    <h3 class="sec">Aktualności i archiwum</h3>
+      <div class="footer-column">
 
-    <div class="news-item">
-      <div class="date">20 listopada 2025</div>
-      <div>
-        <h4><a href="nagroda-2025.html">Ogłoszenie wyników Nagrody ZTP za Innowacje w Praktyce 2025</a></h4>
-        <p>Spośród 54 zgłoszonych nominacji siedmioosobowe jury wybrało jedną laureatkę. Nagrodę otrzymała Yanxi Liu z National Transport Research Programme (NTRP) — za opracowanie i praktyczne zastosowanie metody SDI-BCA.</p>
+        <h3>Na skróty</h3>
+
+        <nav class="footer-links" aria-label="Na skróty">
+
+          <a href="#about">O nas — władze i organizacje członkowskie</a>
+
+          <a href="#award">Nagroda za Innowacje w Praktyce 2025</a>
+
+          <a href="#guidelines">Wytyczne planowania scenariuszowego — wydanie 2024</a>
+
+          <a href="#contact">Kontakt</a>
+
+        </nav>
+
       </div>
-    </div>
 
-    <div class="news-item">
-      <div class="date">15 grudnia 2024</div>
-      <div>
-        <h4><a href="wytyczne.html">Nowe wydanie Wytycznych planowania scenariuszowego — wydanie 2024</a></h4>
-        <p>Zrzeszenie opublikowało wydanie 2024 Wytycznych planowania scenariuszowego. Rozdział 6 poświęcony ocenie i rankingowi projektów inwestycyjnych zaleca stosowanie testu MTRS jako procedury uzupełniającej.</p>
+      <div class="footer-column">
+
+        <h3>Kontakt</h3>
+
+        <div class="footer-contact">
+          ul. Stefana Bobrowskiego 15<br>
+          31-552 Kraków, Polska<br>
+          <a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a>
+        </div>
+
       </div>
+
     </div>
 
-    <div class="news-item">
-      <div class="date">12 czerwca 2025</div>
-      <div>
-        <h4>Walne Zebranie Członków ZTP w Krakowie</h4>
-        <p>Podczas dorocznego Walnego Zebrania w Krakowie podsumowano działalność Zrzeszenia w roku 2024 oraz przyjęto plan prac na rok bieżący, obejmujący dalszy rozwój Wytycznych planowania scenariuszowego.</p>
-      </div>
-    </div>
+    <div class="footer-bottom">
 
-    <h3 class="sec">Nagroda ZTP za Innowacje w Praktyce</h3>
-    <div class="laureate">
-      <div class="lbl">Edycja 2025 · 54 nominacje · 1 laureat · jury 7 osób</div>
-      <h4>Laureatka: Yanxi Liu</h4>
-      <p>National Transport Research Programme (NTRP) — nagroda za opracowanie i zastosowanie w praktyce metody SDI-BCA (Staged-Delay-Inclusive Benefit-Cost Analysis). Ogłoszenie wyników: 20 listopada 2025 r. · Uroczyste wręczenie: 5 grudnia 2025 r., Kraków.</p>
-      <p><a href="nagroda-2025.html">Szczegóły edycji 2025, regulamin i skład jury →</a></p>
-    </div>
-
-  </div>
-</main>
-
-<footer class="site">
-  <div class="footer-cols">
-    <div class="col">
-      <h5>Zrzeszenie Transportu Prywatnego</h5>
-      <p>Ogólnokrajowa organizacja prywatnych przewoźników transportu pasażerskiego, założona w 2001 roku, z siedzibą w Krakowie.</p>
-    </div>
-    <div class="col">
-      <h5>Na skróty</h5>
-      <ul>
-        <li><a href="o-nas.html">O nas — władze i organizacje członkowskie</a></li>
-        <li><a href="nagroda-2025.html">Nagroda za Innowacje w Praktyce 2025</a></li>
-        <li><a href="wytyczne.html">Wytyczne planowania scenariuszowego — wydanie 2024</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-    <div class="col">
-      <h5>Kontakt</h5>
-      <p>ul. Stefana Bobrowskiego 15<br>31-552 Kraków, Polska<br>biuro@ztp-federation.org</p>
-    </div>
-  </div>
-  <div class="footer-flag"><div class="white"></div><div class="red"></div></div>
-  <div class="footer-bottom">
-    <div class="wrap">
       <span>KRS 0000013480 · © 2001–2026 Zrzeszenie Transportu Prywatnego</span>
-      
+
     </div>
-  </div>
-</footer>
+
+  </footer>
 
 </body>
 </html>

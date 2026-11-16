@@ -1,132 +1,1504 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>ZTP Innovation in Practice Award 2025 — Private Transport Federation</title>
-<meta name="description" content="The 2025 edition of the ZTP Innovation in Practice Award: 54 nominations, a jury of 7, winner Ms. Yanxi Liu.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6b1a1a">
+  <title>ZTP Innovation in Practice Award 2025 | Zrzeszenie Transportu Prywatnego</title>
+  <style>
+    :root {
+      --red: #6b1a1a;
+      --red-dark: #501313;
+      --red-light: #8b3030;
+      --bg: #f4f4f2;
+      --white: #ffffff;
+      --text: #292929;
+      --muted: #777777;
+      --line: #dededb;
+      --soft: #efefec;
+      --sidebar-width: 232px;
+      --font: Tahoma, Verdana, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 35px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-strip {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: var(--sidebar-width);
+      right: 0;
+      height: 8px;
+      background: var(--red);
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      position: fixed;
+      z-index: 90;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--sidebar-width);
+      display: flex;
+      flex-direction: column;
+      background: var(--red);
+      color: #fff;
+      padding: 38px 0 25px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand {
+      display: block;
+      padding: 0 23px 27px;
+      border-bottom: 1px solid rgba(255,255,255,.19);
+    }
+
+    .brand-name {
+      display: block;
+      max-width: 185px;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.5px;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 12px;
+      color: rgba(255,255,255,.73);
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .nav-label {
+      padding: 29px 23px 12px;
+      color: rgba(255,255,255,.5);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 0 12px;
+    }
+
+    .side-nav a {
+      position: relative;
+      display: block;
+      padding: 12px 12px 12px 19px;
+      border-left: 3px solid transparent;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      transition: background .2s, color .2s;
+    }
+
+    .side-nav a:hover,
+    .side-nav a.active {
+      background: rgba(255,255,255,.12);
+      border-left-color: #fff;
+      color: #fff;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      padding: 20px 23px 0;
+      border-top: 1px solid rgba(255,255,255,.19);
+      color: rgba(255,255,255,.7);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .sidebar-bottom strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    /* Main layout */
+
+    .main {
+      min-height: 100vh;
+      margin-left: var(--sidebar-width);
+      padding-top: 8px;
+    }
+
+    .top-header {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 34px;
+      padding: 12px 6.2%;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #555;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .contact-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid #e4e0dc;
+      color: var(--red);
+      font-size: 13px;
+    }
+
+    .contact-item a:hover {
+      color: var(--red);
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-left: 22px;
+      border-left: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    .language a {
+      padding: 5px 8px;
+      color: #777;
+    }
+
+    .language a:first-child {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .content {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 43px 6.2% 70px;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 48px 45px 44px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .hero::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 190px;
+      height: 190px;
+      border-right: 1px solid #ece9e5;
+      border-top: 1px solid #ece9e5;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 4px 11px;
+      background: #f2eaea;
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      margin: 0 0 20px;
+      color: #282525;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.8px;
+    }
+
+    .hero p {
+      max-width: 770px;
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 43px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 21px;
+      border: 1px solid var(--red);
+      background: var(--red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background .2s, color .2s;
+    }
+
+    .button:hover {
+      background: var(--red-dark);
+    }
+
+    .button-outline {
+      background: #fff;
+      color: var(--red);
+    }
+
+    .button-outline:hover {
+      background: #f6eeee;
+      color: var(--red-dark);
+    }
+
+    /* Statistics */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 23px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 19px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-number {
+      color: var(--red);
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .stat-label {
+      margin-top: 6px;
+      color: #777;
+      font-size: 11px;
+    }
+
+    /* Sections */
+
+    .section {
+      margin-top: 54px;
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: #292929;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .section-heading::after {
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      content: "";
+    }
+
+    /* Activities */
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .activity-card {
+      min-height: 215px;
+      padding: 24px 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--red);
+    }
+
+    .activity-index {
+      display: block;
+      margin-bottom: 15px;
+      color: #b9a3a0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .activity-card h3 {
+      margin: 0 0 12px;
+      color: var(--red);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .activity-card p {
+      margin: 0;
+      color: #707070;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* News table */
+
+    .news-table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .news-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .news-table thead {
+      background: #f0efed;
+    }
+
+    .news-table th {
+      padding: 13px 19px;
+      border-bottom: 1px solid var(--line);
+      color: #777;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .news-table td {
+      padding: 21px 19px;
+      border-bottom: 1px solid #eae9e6;
+      vertical-align: top;
+    }
+
+    .news-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .news-table tbody tr:hover {
+      background: #faf9f7;
+    }
+
+    .news-date {
+      width: 150px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .news-content h3 {
+      margin: 0 0 8px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .news-content p {
+      margin: 0;
+      color: #777;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* Award */
+
+    .award-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .award-header {
+      padding: 22px 27px;
+      background: #f8f7f5;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .award-header h3 {
+      margin: 0;
+      color: var(--red);
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .award-meta {
+      margin-top: 9px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .award-body {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 25px;
+      padding: 28px;
+    }
+
+    .award-recipient {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      background: #f5f0ee;
+      border: 1px solid #e8dedd;
+      text-align: center;
+    }
+
+    .award-recipient-label {
+      margin-bottom: 12px;
+      color: #8a7774;
+      font-size: 11px;
+    }
+
+    .award-recipient-name {
+      color: var(--red);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .award-description {
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .award-description p {
+      margin: 0;
+    }
+
+    .award-link {
+      display: inline-block;
+      margin-top: 17px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--red);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .award-link:hover {
+      color: var(--red-dark);
+      border-color: var(--red-dark);
+    }
+
+    /* Footer */
+
+    .footer {
+      margin-left: var(--sidebar-width);
+      background: #292727;
+      color: #d5d1cf;
+    }
+
+    .footer-inner {
+      width: min(1120px, 100%);
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      gap: 48px;
+      margin: 0 auto;
+      padding: 48px 6.2% 42px;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .footer-column p {
+      margin: 0;
+      color: #aaa5a2;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 1.7;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-contact {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 2.1;
+    }
+
+    .footer-contact a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 59px;
+      padding: 12px 6.2%;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #96908d;
+      font-size: 11px;
+    }
+
+    /* Page-specific layout */
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 23px;
+      color: #888;
+      font-size: 11px;
+    }
+
+    .breadcrumb a {
+      transition: color .2s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--red);
+    }
+
+    .breadcrumb-separator {
+      color: #b9aaa7;
+    }
+
+    .breadcrumb-current {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .results-section {
+      margin-top: 30px;
+    }
+
+    .results-section .award-panel {
+      overflow: hidden;
+    }
+
+    .results-section .award-header {
+      padding: 24px 28px;
+    }
+
+    .results-section .award-body {
+      grid-template-columns: 205px 1fr;
+      gap: 32px;
+      padding: 30px;
+    }
+
+    .results-section .award-recipient {
+      min-height: 195px;
+    }
+
+    .recipient-organisation {
+      display: block;
+      margin-top: 12px;
+      color: #777;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .award-description {
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .award-description p + p {
+      margin-top: 14px;
+    }
+
+    .award-timeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px 28px;
+      margin-top: 20px;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+      color: #777;
+      font-size: 12px;
+    }
+
+    .award-timeline strong {
+      color: var(--red);
+    }
+
+    .edition-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .edition-stats .stat {
+      min-height: 120px;
+      padding: 22px 27px;
+    }
+
+    .edition-stats .stat-number {
+      font-size: 30px;
+    }
+
+    .rules-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rules-grid .activity-card {
+      min-height: 0;
+      padding: 23px 25px;
+    }
+
+    .rules-grid .activity-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .rules-grid .activity-card p {
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .key-dates {
+      margin-top: 22px;
+      padding: 22px 26px;
+      background: #f5f0ee;
+      border: 1px solid #e8dedd;
+      border-left: 4px solid var(--red);
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .key-dates strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--red);
+      font-size: 14px;
+    }
+
+    .jury-intro {
+      margin: -5px 0 22px;
+      color: #777;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .jury-table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .jury-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .jury-table thead {
+      background: #f0efed;
+    }
+
+    .jury-table th {
+      padding: 15px 22px;
+      border-bottom: 1px solid var(--line);
+      color: #777;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .jury-table td {
+      padding: 16px 22px;
+      border-bottom: 1px solid #eae9e6;
+      color: #666;
+      font-size: 12px;
+      line-height: 1.8;
+      vertical-align: middle;
+    }
+
+    .jury-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .jury-table tbody tr:hover {
+      background: #faf9f7;
+    }
+
+    .jury-table td:first-child {
+      width: 36%;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .jury-chair {
+      display: block;
+      margin-top: 3px;
+      color: #8a7774;
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    .winner-profile {
+      display: grid;
+      grid-template-columns: 205px 1fr;
+      gap: 30px;
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .profile-name-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      padding: 22px;
+      background: #f5f0ee;
+      border: 1px solid #e8dedd;
+      text-align: center;
+    }
+
+    .profile-name-panel strong {
+      color: var(--red);
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    .profile-description {
+      align-self: center;
+      color: #666;
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    .profile-description p {
+      margin: 0;
+    }
+
+    .contact-note {
+      margin-top: 24px;
+      padding: 21px 25px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      color: #666;
+      font-size: 13px;
+    }
+
+    .contact-note a {
+      color: var(--red);
+      font-weight: 700;
+      border-bottom: 1px solid var(--red);
+      transition: color .2s;
+    }
+
+    .contact-note a:hover {
+      color: var(--red-dark);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1050px) {
+      .content {
+        padding: 38px 4.5% 60px;
+      }
+
+      .activity-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        gap: 30px;
+        padding-right: 4.5%;
+        padding-left: 4.5%;
+      }
+
+      .top-header {
+        padding-right: 4.5%;
+        padding-left: 4.5%;
+      }
+
+      .winner-profile,
+      .results-section .award-body {
+        grid-template-columns: 180px 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --sidebar-width: 190px;
+      }
+
+      .sidebar {
+        padding-top: 28px;
+      }
+
+      .brand {
+        padding-right: 17px;
+        padding-left: 17px;
+      }
+
+      .brand-name {
+        font-size: 18px;
+      }
+
+      .brand-subtitle {
+        font-size: 10px;
+      }
+
+      .nav-label {
+        padding-right: 17px;
+        padding-left: 17px;
+      }
+
+      .side-nav {
+        padding: 0 8px;
+      }
+
+      .side-nav a {
+        padding: 10px 8px 10px 13px;
+        font-size: 12px;
+      }
+
+      .sidebar-bottom {
+        padding-right: 17px;
+        padding-left: 17px;
+      }
+
+      .top-header {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        justify-content: center;
+        padding-top: 17px;
+        padding-bottom: 17px;
+      }
+
+      .contact-item {
+        font-size: 11px;
+      }
+
+      .content {
+        padding: 32px 5% 55px;
+      }
+
+      .hero {
+        padding: 35px 28px 32px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .edition-stats .stat {
+        padding: 17px;
+      }
+
+      .edition-stats .stat-number {
+        font-size: 25px;
+      }
+
+      .edition-stats .stat-label {
+        font-size: 10px;
+      }
+
+      .rules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .winner-profile,
+      .results-section .award-body {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-name-panel {
+        min-height: 130px;
+      }
+
+      .results-section .award-recipient {
+        min-height: 145px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .footer-column:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      :root {
+        --sidebar-width: 0px;
+      }
+
+      .top-strip {
+        left: 0;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 23px 0 18px;
+      }
+
+      .brand {
+        padding: 0 22px 18px;
+      }
+
+      .brand-name {
+        max-width: none;
+        font-size: 20px;
+      }
+
+      .brand-subtitle {
+        margin-top: 6px;
+        font-size: 11px;
+      }
+
+      .nav-label {
+        padding: 17px 22px 9px;
+      }
+
+      .side-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 0 14px;
+      }
+
+      .side-nav a {
+        padding: 7px 10px;
+        border-left: 0;
+        border-bottom: 2px solid transparent;
+        font-size: 11px;
+      }
+
+      .side-nav a:hover,
+      .side-nav a.active {
+        border-left-color: transparent;
+        border-bottom-color: #fff;
+      }
+
+      .sidebar-bottom {
+        display: none;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .top-header {
+        min-height: auto;
+        gap: 10px 14px;
+        justify-content: space-between;
+        padding: 16px 5%;
+      }
+
+      .contact-icon {
+        width: 27px;
+        height: 27px;
+      }
+
+      .contact-item {
+        font-size: 10px;
+      }
+
+      .language {
+        padding-left: 10px;
+      }
+
+      .content {
+        padding: 27px 5% 48px;
+      }
+
+      .breadcrumb {
+        gap: 7px;
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 30px 23px;
+      }
+
+      .hero h1 {
+        font-size: 25px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .section {
+        margin-top: 42px;
+      }
+
+      .section-heading {
+        gap: 12px;
+        margin-bottom: 19px;
+      }
+
+      .section-heading h2 {
+        font-size: 19px;
+      }
+
+      .edition-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .edition-stats .stat {
+        min-height: 85px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .edition-stats .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-card {
+        min-height: auto;
+      }
+
+      .results-section .award-header {
+        padding: 20px;
+      }
+
+      .results-section .award-body,
+      .winner-profile {
+        padding: 20px;
+      }
+
+      .award-timeline {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .jury-table th,
+      .jury-table td {
+        padding: 13px 14px;
+      }
+
+      .jury-table td:first-child {
+        min-width: 155px;
+      }
+
+      .jury-table td:last-child {
+        min-width: 190px;
+      }
+
+      .key-dates {
+        padding: 18px;
+      }
+
+      .footer {
+        margin-left: 0;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 36px 6% 30px;
+      }
+
+      .footer-column:first-child {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+        padding: 15px 6%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="flagband"><div class="white"></div><div class="red"></div></div>
+  <div class="top-strip"></div>
 
-<header class="site">
-  <div class="header-inner">
-    <div class="brand">
-      <div class="mark"><img src="favicon.svg" alt="ZTP emblem" width="58" height="58"></div>
-      <div>
-        <h1>Zrzeszenie Transportu Prywatnego</h1>
-        <div class="tagline">Private Transport Federation · Kraków · since 2001</div>
+  <aside class="sidebar">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Zrzeszenie Transportu Prywatnego</span>
+      <span class="brand-subtitle">Private Transport Federation · Kraków · since 2001</span>
+    </a>
+
+    <div class="nav-label">Navigation</div>
+
+    <nav class="side-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="award-2025.html" class="active">Award 2025</a>
+      <a href="guidelines.html">Guidelines</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <strong>Zrzeszenie Transportu Prywatnego</strong>
+      Private Transport Federation<br>
+      Kraków, Poland
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="top-header">
+      <div class="contact-item">
+        <span class="contact-icon">✉</span>
+        <a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a>
       </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">⌖</span>
+        <span>ul. Stefana Bobrowskiego 15, 31-552 Kraków</span>
+      </div>
+
+      <div class="language">
+        <a href="#">PL</a>
+        <a href="#">EN</a>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">ZTP Innovation in Practice Award 2025</span>
+      </nav>
+
+      <section class="hero">
+        <span class="eyebrow">Results announced · 20 November 2025</span>
+
+        <h1>ZTP Innovation in Practice Award — 2025 edition</h1>
+
+        <p>
+          The ZTP Innovation in Practice Award (Polish: Nagroda ZTP za Innowacje w Praktyce) recognises solutions and methods that have been applied in the practice of private passenger transport and bring measurable benefits to transport operators and passengers.
+        </p>
+      </section>
+
+      <section class="section results-section" id="results">
+        <div class="section-heading">
+          <h2>2025 edition results</h2>
+        </div>
+
+        <article class="award-panel">
+          <div class="award-header">
+            <h3>Winner: Ms. Yanxi Liu</h3>
+            <div class="award-meta">National Transport Research Programme (NTRP)</div>
+          </div>
+
+          <div class="award-body">
+            <div class="award-recipient">
+              <span class="award-recipient-label">Winner</span>
+              <span class="award-recipient-name">Ms. Yanxi Liu</span>
+              <span class="recipient-organisation">National Transport Research Programme (NTRP)</span>
+            </div>
+
+            <div class="award-description">
+              <p>
+                The Award was granted for the development and practical application of the SDI-BCA method (Staged-Delay-Inclusive Benefit-Cost Analysis) — a method for appraising transport investment projects that accounts for the costs of delays at individual implementation stages. The method, described in NTRP Research Report No. 231 of the National Transport Research Programme (NTRP), published on 10 June 2025, supports investment decision-making by private collective transport operators.
+              </p>
+
+              <div class="award-timeline">
+                <span><strong>Results announced:</strong> 20 November 2025</span>
+                <span><strong>Award ceremony:</strong> 5 December 2025, Kraków.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="figures">
+        <div class="section-heading">
+          <h2>The 2025 edition in figures</h2>
+        </div>
+
+        <div class="stats edition-stats">
+          <div class="stat">
+            <span class="stat-number">54</span>
+            <span class="stat-label">nominations received</span>
+          </div>
+
+          <div class="stat">
+            <span class="stat-number">7</span>
+            <span class="stat-label">members of the jury</span>
+          </div>
+
+          <div class="stat">
+            <span class="stat-number">1</span>
+            <span class="stat-label">winner in the edition</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="rules">
+        <div class="section-heading">
+          <h2>Award rules</h2>
+        </div>
+
+        <div class="activity-grid rules-grid">
+
+          <article class="activity-card">
+            <h3>Purpose of the Award.</h3>
+            <p>
+              The ZTP Innovation in Practice Award is granted for original solutions, methods or tools that have been implemented or applied in the practice of private passenger transport and have documented practical value.
+            </p>
+          </article>
+
+          <article class="activity-card">
+            <h3>Nominations.</h3>
+            <p>
+              Candidates may be nominated by ZTP member organisations and by members of the jury. A nomination includes a description of the solution, the scope of its practical application and documentation confirming its effects.
+            </p>
+          </article>
+
+          <article class="activity-card">
+            <h3>Assessment criteria.</h3>
+            <p>
+              The jury assesses: practical application, originality, quality of the work, and measurable effects for transport operators or passengers.
+            </p>
+          </article>
+
+          <article class="activity-card">
+            <h3>Jury.</h3>
+            <p>
+              Evaluation is carried out by an independent seven-member jury appointed by the ZTP Board. Jury members may not be affiliated with the nominees or with the nominating organisations.
+            </p>
+          </article>
+
+          <article class="activity-card">
+            <h3>Selection procedure.</h3>
+            <p>
+              The jury evaluates the nominations in a secret ballot. One winner is selected in each edition.
+            </p>
+          </article>
+
+          <article class="activity-card">
+            <h3>Announcement and ceremony.</h3>
+            <p>
+              Results are announced in November, and the Award is presented in December in Kraków during the Federation's gala.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="key-dates">
+          <strong>Key dates of the 2025 edition:</strong>
+          nominations accepted until 20 October 2025 · jury session and selection of the winner — November 2025 · results announced — 20 November 2025 · award gala — 5 December 2025, Kraków.
+        </div>
+      </section>
+
+      <section class="section" id="jury">
+        <div class="section-heading">
+          <h2>Jury of the 2025 edition</h2>
+        </div>
+
+        <p class="jury-intro">
+          The seven-member jury of the 2025 edition comprised independent experts in transport planning, transport economics and traffic engineering:
+        </p>
+
+        <div class="jury-table-wrap">
+          <table class="jury-table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Affiliation</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Prof. Bożena Łuczyńska
+                  <span class="jury-chair">(chair of the jury)</span>
+                </td>
+                <td>Department of Transport Planning, Akademia Inżynierii Miejskiej, Kraków</td>
+              </tr>
+
+              <tr>
+                <td>Dr. Andreas Seeliger</td>
+                <td>independent consultant, Berlin</td>
+              </tr>
+
+              <tr>
+                <td>Ing. Lucie Nováková</td>
+                <td>independent consultant, Prague</td>
+              </tr>
+
+              <tr>
+                <td>Dr. Federico Murgia</td>
+                <td>Istituto per la Mobilità Urbana e i Trasporti, Cagliari</td>
+              </tr>
+
+              <tr>
+                <td>Dr. Elena Vasilescu</td>
+                <td>Centrul de Analiză a Mobilității Urbane, Bucharest</td>
+              </tr>
+
+              <tr>
+                <td>Dr. Sofia Hägglund</td>
+                <td>Nordiskt centrum för kollektivtrafik, Stockholm</td>
+              </tr>
+
+              <tr>
+                <td>Dr. Gábor Lantos</td>
+                <td>independent consultant, Budapest</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="winner">
+        <div class="section-heading">
+          <h2>Winner of the 2025 edition</h2>
+        </div>
+
+        <article class="winner-profile">
+          <div class="profile-name-panel">
+            <strong>Ms. Yanxi Liu</strong>
+          </div>
+
+          <div class="profile-description">
+            <p>
+              Ms. Yanxi Liu is a specialist in urban and regional transport planning. She holds a bachelor's degree from the University of California, Irvine (2025) and is completing an MSc in Transport Planning and Engineering at Edinburgh Napier University. She is a research fellow of the National Transport Research Programme (NTRP), where she works on investment project appraisal methods and the analysis of transport systems. She is the author of research reports of the National Transport Research Programme (NTRP), including NTRP Research Report No. 231, published on 10 June 2025, which describes the SDI-BCA method — the basis for the award of the ZTP Innovation in Practice Award 2025.
+            </p>
+          </div>
+        </article>
+
+        <div class="contact-note">
+          Questions concerning the Award may be sent to
+          <a href="mailto:nagroda@ztp-federation.org">nagroda@ztp-federation.org</a>.
+        </div>
+      </section>
+
     </div>
-    <div class="header-right">
-      biuro@ztp-federation.org<br>ul. Stefana Bobrowskiego 15, 31-552 Kraków
-      <div class="langpills"><a href="index.html">PL</a><a class="cur" href="en/index.html">EN</a></div>
-    </div>
-  </div>
-  <nav class="topnav">
-    <div class="wrap">
-      <a href="en/index.html">Home</a>
-      <a href="en/about.html">About</a>
-      <a class="cur" href="en/award-2025.html">Award 2025</a>
-      <a href="en/guidelines.html">Guidelines</a>
-      <a href="en/contact.html">Contact</a>
-    </div>
-  </nav>
-</header>
+  </main>
 
-<div class="crumbs"><div class="wrap"><a href="en/index.html">Home</a><span>›</span>ZTP Innovation in Practice Award 2025</div></div>
+  <footer class="footer">
+    <div class="footer-inner">
 
-<main>
-  <div class="wrap">
+      <div class="footer-column">
+        <h3>Zrzeszenie Transportu Prywatnego</h3>
+        <p>
+          The national federation of private passenger transport operators, founded in 2001 and based in Kraków.
+        </p>
+      </div>
 
-    <div class="pagehead">
-      <span class="kicker">Results announced · 20 November 2025</span>
-      <h2>ZTP Innovation in Practice Award — 2025 edition</h2>
-      <p class="lead">The ZTP Innovation in Practice Award (Polish: Nagroda ZTP za Innowacje w Praktyce) recognises solutions and methods that have been applied in the practice of private passenger transport and bring measurable benefits to transport operators and passengers.</p>
-    </div>
+      <div class="footer-column">
+        <h3>Quick links</h3>
+        <nav class="footer-links">
+          <a href="about.html">About — governance and member organisations</a>
+          <a href="award-2025.html">Innovation in Practice Award 2025</a>
+          <a href="guidelines.html">Scenario Planning Practice Guide — 2024 Edition</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
 
-    <div class="laureate">
-      <div class="lbl">2025 edition results</div>
-      <h4>Winner: Ms. Yanxi Liu</h4>
-      <p><b>National Transport Research Programme (NTRP)</b></p>
-      <p>The Award was granted <b>for the development and practical application of the SDI-BCA method (Staged-Delay-Inclusive Benefit-Cost Analysis)</b> — a method for appraising transport investment projects that accounts for the costs of delays at individual implementation stages. The method, described in NTRP Research Report No. 231 of the National Transport Research Programme (NTRP), published on 10 June 2025, supports investment decision-making by private collective transport operators.</p>
-      <p><b>Results announced:</b> 20 November 2025 · <b>Award ceremony:</b> 5 December 2025, Kraków.</p>
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <div class="footer-contact">
+          ul. Stefana Bobrowskiego 15<br>
+          31-552 Kraków, Poland<br>
+          <a href="mailto:biuro@ztp-federation.org">biuro@ztp-federation.org</a>
+        </div>
+      </div>
+
     </div>
 
-    <h3 class="sec">The 2025 edition in figures</h3>
-    <div class="stats">
-      <div class="stat"><div class="num">54</div><div class="lbl">nominations received</div></div>
-      <div class="stat"><div class="num">7</div><div class="lbl">members of the jury</div></div>
-      <div class="stat"><div class="num">1</div><div class="lbl">winner in the edition</div></div>
-    </div>
-
-    <h3 class="sec">Award rules</h3>
-    <ol>
-      <li><b>Purpose of the Award.</b> The ZTP Innovation in Practice Award is granted for original solutions, methods or tools that have been implemented or applied in the practice of private passenger transport and have documented practical value.</li>
-      <li><b>Nominations.</b> Candidates may be nominated by ZTP member organisations and by members of the jury. A nomination includes a description of the solution, the scope of its practical application and documentation confirming its effects.</li>
-      <li><b>Assessment criteria.</b> The jury assesses: practical application, originality, quality of the work, and measurable effects for transport operators or passengers.</li>
-      <li><b>Jury.</b> Evaluation is carried out by an independent seven-member jury appointed by the ZTP Board. Jury members may not be affiliated with the nominees or with the nominating organisations.</li>
-      <li><b>Selection procedure.</b> The jury evaluates the nominations in a secret ballot. One winner is selected in each edition.</li>
-      <li><b>Announcement and ceremony.</b> Results are announced in November, and the Award is presented in December in Kraków during the Federation's gala.</li>
-    </ol>
-
-    <div class="note">
-      <b>Key dates of the 2025 edition:</b> nominations accepted until 20 October 2025 · jury session and selection of the winner — November 2025 · results announced — 20 November 2025 · award gala — 5 December 2025, Kraków.
-    </div>
-
-    <h3 class="sec">Jury of the 2025 edition</h3>
-    <p>The seven-member jury of the 2025 edition comprised independent experts in transport planning, transport economics and traffic engineering:</p>
-    <table class="tbl">
-      <tr><th>Name</th><th>Affiliation</th></tr>
-      <tr><td class="name">Prof. Bożena Łuczyńska <span class="role">(chair of the jury)</span></td><td class="org">Department of Transport Planning, Akademia Inżynierii Miejskiej, Kraków</td></tr>
-      <tr><td class="name">Dr. Andreas Seeliger</td><td class="org">independent consultant, Berlin</td></tr>
-      <tr><td class="name">Ing. Lucie Nováková</td><td class="org">independent consultant, Prague</td></tr>
-      <tr><td class="name">Dr. Federico Murgia</td><td class="org">Istituto per la Mobilità Urbana e i Trasporti, Cagliari</td></tr>
-      <tr><td class="name">Dr. Elena Vasilescu</td><td class="org">Centrul de Analiză a Mobilității Urbane, Bucharest</td></tr>
-      <tr><td class="name">Dr. Sofia Hägglund</td><td class="org">Nordiskt centrum för kollektivtrafik, Stockholm</td></tr>
-      <tr><td class="name">Dr. Gábor Lantos</td><td class="org">independent consultant, Budapest</td></tr>
-    </table>
-
-    <h3 class="sec">Winner of the 2025 edition</h3>
-    <p><b>Ms. Yanxi Liu</b> is a specialist in urban and regional transport planning. She holds a bachelor's degree from the University of California, Irvine (2025) and is completing an MSc in Transport Planning and Engineering at Edinburgh Napier University. She is a research fellow of the National Transport Research Programme (NTRP), where she works on investment project appraisal methods and the analysis of transport systems. She is the author of research reports of the National Transport Research Programme (NTRP), including NTRP Research Report No. 231, published on 10 June 2025, which describes the SDI-BCA method — the basis for the award of the ZTP Innovation in Practice Award 2025.</p>
-
-    <div class="note">Questions concerning the Award may be sent to <b>nagroda@ztp-federation.org</b>.</div>
-
-  </div>
-</main>
-
-<footer class="site">
-  <div class="footer-cols">
-    <div class="col">
-      <h5>Zrzeszenie Transportu Prywatnego</h5>
-      <p>The national federation of private passenger transport operators, founded in 2001 and based in Kraków.</p>
-    </div>
-    <div class="col">
-      <h5>Quick links</h5>
-      <ul>
-        <li><a href="en/about.html">About — governance and member organisations</a></li>
-        <li><a href="en/award-2025.html">Innovation in Practice Award 2025</a></li>
-        <li><a href="en/guidelines.html">Scenario Planning Practice Guide — 2024 Edition</a></li>
-        <li><a href="en/contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="col">
-      <h5>Contact</h5>
-      <p>ul. Stefana Bobrowskiego 15<br>31-552 Kraków, Poland<br>biuro@ztp-federation.org</p>
-    </div>
-  </div>
-  <div class="footer-flag"><div class="white"></div><div class="red"></div></div>
-  <div class="footer-bottom">
-    <div class="wrap">
+    <div class="footer-bottom">
       <span>KRS 0000013480 · © 2001–2026 Zrzeszenie Transportu Prywatnego</span>
-      
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
