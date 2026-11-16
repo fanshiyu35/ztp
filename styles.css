@@ -1,254 +1,312 @@
 /* ============================================================
    Zrzeszenie Transportu Prywatnego — oficjalna strona (PL/EN)
-   Styl: polskie zrzeszenie branżowe — ciepła kremowa biel,
-   czerwień, akcenty bursztynowe. Serif + sans.
+   Styl v2 (2026-11): polska federacja branżowa, Kraków —
+   portal rządowy: lewa kolumna nawigacyjna, Tahoma (nagłówki)
+   / Verdana (tekst), czerwień ciemna #6b1a1a na tle #f4f4f2.
    ============================================================ */
 
 :root {
-  --red:        #8E1C2E;
-  --red-dark:   #6E1322;
-  --red-deep:   #4E0C18;
-  --amber:      #C08A2D;
-  --amber-soft: #F3E7CB;
-  --cream:      #F7F1E6;
-  --paper:      #FFFDF7;
-  --ink:        #2E2620;
-  --muted:      #7A6A5D;
-  --line:       #E5D9C4;
-  --footer-bg:  #2E1F1B;
+  --red:        #6b1a1a;
+  --red-dark:   #551414;
+  --red-deep:   #3d0e0e;
+  --bg:         #f4f4f2;
+  --bg-outer:   #e8e8e5;
+  --paper:      #ffffff;
+  --ink:        #2b2a27;
+  --muted:      #6e6b64;
+  --line:       #d9d9d4;
+  --line-strong:#c3c3bd;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { background: var(--bg-outer); }
+
 body {
-  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  background: var(--cream);
+  font-family: Verdana, Geneva, "Segoe UI", sans-serif;
+  background: var(--bg);
   color: var(--ink);
-  line-height: 1.65;
-  font-size: 16px;
+  line-height: 1.6;
+  font-size: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr);
+  grid-template-areas:
+    "flag flag"
+    "side hero"
+    "side main"
+    "foot foot";
 }
 
 /* Pas biało-czerwony u góry */
-.flagband { display: flex; height: 6px; }
-.flagband .white { flex: 1; background: #F2F2F2; }
+.flagband { grid-area: flag; display: flex; height: 6px; }
+.flagband .white { flex: 1; background: #f2f2f2; }
 .flagband .red   { flex: 1; background: var(--red); }
 
-.wrap { max-width: 1060px; margin: 0 auto; padding: 0 22px; }
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 26px; }
 
 a { color: var(--red); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ---------- Nagłówek ---------- */
+/* ---------- Lewa kolumna: nagłówek + nawigacja pionowa ---------- */
 header.site {
+  grid-area: side;
   background: var(--paper);
-  border-bottom: 3px solid var(--red);
+  border-right: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 .header-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 22px; max-width: 1060px; margin: 0 auto;
-  gap: 18px; flex-wrap: wrap;
+  padding: 22px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 3px solid var(--red);
 }
-.brand { display: flex; align-items: center; gap: 16px; }
-.brand .mark { flex: 0 0 auto; }
+.brand { display: flex; flex-direction: column; gap: 10px; }
+.brand .mark img { display: block; }
 .brand h1 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.55rem; line-height: 1.15;
-  color: var(--red-dark); letter-spacing: 0.02em;
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 1.28rem; line-height: 1.2;
+  color: var(--red-dark);
 }
 .brand .tagline {
-  font-size: 0.85rem; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.08em; margin-top: 3px;
+  font-size: 0.72rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px;
 }
-.header-right { text-align: right; font-size: 0.85rem; color: var(--muted); }
-.langpills { margin-top: 6px; }
-.langpills a {
-  display: inline-block; padding: 2px 12px; margin-left: 4px;
-  border: 1px solid var(--red); border-radius: 14px;
-  font-size: 0.8rem; letter-spacing: 0.04em; color: var(--red);
-}
-.langpills a:hover { text-decoration: none; background: var(--amber-soft); }
-.langpills a.cur { background: var(--red); color: #FFF8EC; }
+.header-right { font-size: 0.76rem; color: var(--muted); line-height: 1.5; }
 
-/* ---------- Nawigacja ---------- */
-nav.topnav { background: var(--red); }
-nav.topnav .wrap {
-  display: flex; flex-wrap: wrap;
-  padding-top: 0; padding-bottom: 0;
+/* Etykiety językowe PL / EN */
+.langpills { margin-top: 8px; }
+.langpills a {
+  display: inline-block; padding: 3px 13px; margin-right: 6px;
+  border: 1px solid var(--red); font-size: 0.75rem;
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold; letter-spacing: 0.05em; color: var(--red);
+  background: var(--paper);
 }
+.langpills a:hover { background: var(--red); color: #ffffff; text-decoration: none; }
+.langpills a.cur { background: var(--red); color: #ffffff; }
+
+/* Nawigacja pionowa — rządowy spis działów */
+nav.topnav { background: var(--paper); }
+nav.topnav .wrap { display: block; padding: 0; max-width: none; }
 nav.topnav a {
-  display: block; padding: 13px 18px;
-  color: #FFF4E4; text-transform: uppercase;
-  font-size: 0.82rem; letter-spacing: 0.09em;
-  border-bottom: 3px solid transparent;
+  display: block; padding: 12px 18px;
+  color: #3c3a36; font-size: 0.88rem;
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  border-bottom: 1px solid var(--line);
+  border-left: 4px solid transparent;
 }
-nav.topnav a:hover { text-decoration: none; background: var(--red-dark); }
-nav.topnav a.cur { background: var(--red-dark); border-bottom-color: var(--amber); color: #FFF; }
+nav.topnav a:hover {
+  background: var(--red); color: #ffffff; text-decoration: none;
+  border-left-color: var(--red-dark);
+}
+nav.topnav a.cur {
+  background: var(--red); color: #ffffff;
+  border-left-color: var(--red-dark);
+}
 
 /* ---------- Okruszki ---------- */
-.crumbs { background: var(--paper); border-bottom: 1px solid var(--line); }
-.crumbs .wrap { padding: 9px 22px; font-size: 0.8rem; color: var(--muted); }
+.crumbs { grid-area: hero; background: var(--paper); border-bottom: 1px solid var(--line); }
+.crumbs .wrap { padding: 9px 26px; font-size: 0.78rem; color: var(--muted); }
 .crumbs a { color: var(--muted); }
-.crumbs span { margin: 0 6px; color: #B9AB97; }
+.crumbs span { margin: 0 6px; color: #b3b0a8; }
 
-/* ---------- Główna treść ---------- */
-main { padding: 34px 0 48px; }
-.pagehead { margin-bottom: 26px; }
-.kicker {
-  display: inline-block; background: var(--red); color: #FFF4E4;
-  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
-  padding: 3px 10px; border-radius: 2px; margin-bottom: 10px;
-}
-.pagehead h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.9rem; color: var(--red-dark); line-height: 1.2;
-}
-.pagehead .lead { margin-top: 10px; color: #4A4036; max-width: 760px; }
-
-h3.sec {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.28rem; color: var(--red-dark);
-  margin: 34px 0 14px; padding-left: 12px;
-  border-left: 5px solid var(--red);
-}
-p { margin-bottom: 14px; }
-ul, ol { margin: 0 0 16px 22px; }
-li { margin-bottom: 6px; }
-
-/* ---------- Karty ---------- */
-.cards { display: flex; gap: 18px; flex-wrap: wrap; margin: 18px 0 10px; }
-.card {
-  flex: 1 1 280px; background: var(--paper);
-  border: 1px solid var(--line); border-top: 3px solid var(--red);
-  padding: 20px 22px; border-radius: 3px;
-}
-.card h4 {
-  font-family: Georgia, serif; font-size: 1.1rem;
-  color: var(--red-dark); margin-bottom: 8px;
-}
-.card p { font-size: 0.93rem; color: #4A4036; margin-bottom: 0; }
-.card.amber { border-top-color: var(--amber); }
-
-/* ---------- Hero ---------- */
+/* ---------- Hero (strona główna) ---------- */
 .hero {
-  background: linear-gradient(140deg, var(--red) 0%, var(--red-deep) 78%);
-  border-top: 3px solid var(--amber); border-bottom: 1px solid var(--red-dark);
-  color: #FFF6E8; padding: 46px 0;
+  grid-area: hero;
+  background: var(--paper);
+  border-top: 4px solid var(--red);
+  border-bottom: 1px solid var(--line);
+  padding: 30px 0;
 }
 .hero .wrap { max-width: 1060px; }
 .hero h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.05rem; line-height: 1.22; max-width: 720px;
-  font-weight: normal;
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 1.65rem; line-height: 1.25;
+  color: var(--red-dark);
 }
-.hero p.lead { margin-top: 12px; max-width: 700px; color: #F2E3CC; font-size: 1.02rem; }
-.hero .cta { margin-top: 22px; }
+.hero p.lead { margin-top: 10px; color: #4d4a44; font-size: 0.98rem; }
+.hero .cta { margin-top: 18px; }
 .btn {
-  display: inline-block; padding: 10px 22px; border-radius: 2px;
-  font-size: 0.9rem; letter-spacing: 0.03em; margin-right: 10px; margin-bottom: 6px;
-  border: 1px solid transparent;
+  display: inline-block; padding: 10px 20px;
+  font-size: 0.88rem; font-weight: bold;
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  margin-right: 10px; margin-bottom: 6px;
+  border: 1px solid var(--red);
 }
-.btn.amber { background: var(--amber); color: #FFF; }
-.btn.amber:hover { background: #A87825; text-decoration: none; }
-.btn.outline { border-color: #F2E3CC; color: #F2E3CC; }
-.btn.outline:hover { background: rgba(255,255,255,0.12); text-decoration: none; }
+.btn.amber { background: var(--red); color: #ffffff; }
+.btn.amber:hover { background: var(--red-dark); text-decoration: none; }
+.btn.outline { background: var(--paper); color: var(--red); }
+.btn.outline:hover { background: #f6e8e8; text-decoration: none; }
+
+/* ---------- Główna treść ---------- */
+main { grid-area: main; padding: 30px 0 46px; }
+.pagehead { margin-bottom: 24px; }
+.kicker {
+  display: inline-block; background: var(--red); color: #ffffff;
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em;
+  padding: 4px 10px; margin-bottom: 10px;
+}
+.pagehead h2 {
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 1.65rem; color: var(--red-dark); line-height: 1.2;
+}
+.pagehead .lead { margin-top: 10px; color: #4d4a44; }
+
+h3.sec {
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 1.18rem; color: var(--red-dark);
+  margin: 30px 0 12px; padding-left: 12px;
+  border-left: 5px solid var(--red);
+}
+p { margin-bottom: 12px; }
+ul, ol { margin: 0 0 14px 22px; }
+li { margin-bottom: 5px; }
+
+/* ---------- Karty ---------- */
+.cards { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0 8px; }
+.card {
+  flex: 1 1 280px; background: var(--paper);
+  border: 1px solid var(--line); border-top: 3px solid var(--red);
+  padding: 18px 20px;
+}
+.card h4 {
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold; font-size: 1.02rem;
+  color: var(--red-dark); margin-bottom: 8px;
+}
+.card p { font-size: 0.9rem; color: #4d4a44; margin-bottom: 0; }
+.card.amber { border-top-color: var(--red-dark); }
 
 /* ---------- Pasek liczb ---------- */
-.stats { display: flex; flex-wrap: wrap; gap: 0; margin: 30px 0 8px; border: 1px solid var(--line); background: var(--paper); }
-.stat { flex: 1 1 180px; text-align: center; padding: 20px 12px; border-right: 1px solid var(--line); }
+.stats { display: flex; flex-wrap: wrap; margin: 4px 0 26px; border: 1px solid var(--line); background: var(--paper); }
+.stat { flex: 1 1 180px; text-align: center; padding: 18px 12px; border-right: 1px solid var(--line); }
 .stat:last-child { border-right: none; }
 .stat .num {
-  font-family: Georgia, serif; font-size: 1.9rem; color: var(--red); font-weight: bold;
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold; font-size: 1.7rem; color: var(--red);
 }
 .stat .lbl {
-  font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin-top: 4px;
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin-top: 4px;
 }
 
 /* ---------- Aktualności ---------- */
-.news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px dotted var(--line); }
+.news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .news-item:last-child { border-bottom: none; }
 .news-item .date {
-  flex: 0 0 92px; background: var(--red); color: #FFF4E4; align-self: flex-start;
-  font-size: 0.74rem; text-align: center; padding: 5px 4px; border-radius: 2px;
+  flex: 0 0 96px; background: var(--red); color: #ffffff; align-self: flex-start;
+  font-size: 0.72rem; text-align: center; padding: 5px 4px;
   letter-spacing: 0.02em; line-height: 1.35;
 }
-.news-item h4 { font-family: Georgia, serif; font-size: 1.06rem; color: var(--red-dark); }
+.news-item h4 {
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold; font-size: 1rem; color: var(--red-dark);
+}
 .news-item h4 a { color: var(--red-dark); }
-.news-item p { font-size: 0.92rem; color: #4A4036; margin: 4px 0 0; }
+.news-item p { font-size: 0.9rem; color: #4d4a44; margin: 4px 0 0; }
 
 /* ---------- Tabele (władze, jury) ---------- */
 .tbl { width: 100%; border-collapse: collapse; margin: 10px 0 6px; background: var(--paper); border: 1px solid var(--line); }
 .tbl th {
-  background: var(--red); color: #FFF4E4; text-align: left;
-  font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.09em;
+  background: var(--red); color: #ffffff; text-align: left;
+  font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.09em;
   padding: 9px 14px;
 }
-.tbl td { padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.tbl td { padding: 9px 14px; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
+.tbl tr:nth-child(even) td { background: #fafaf8; }
 .tbl tr:last-child td { border-bottom: none; }
-.tbl td.name { font-family: Georgia, serif; font-weight: bold; color: var(--ink); }
-.tbl td.role { color: var(--muted); font-size: 0.86rem; }
-.tbl td.org { color: #4A4036; font-size: 0.88rem; }
+.tbl td.name { font-family: Tahoma, Geneva, "Segoe UI", sans-serif; font-weight: bold; color: var(--ink); }
+.tbl td.role { color: var(--muted); font-size: 0.84rem; }
+.tbl td.org { color: #4d4a44; font-size: 0.86rem; }
 
 /* ---------- Wyróżnienie laureata ---------- */
 .laureate {
-  background: #FBF3DF; border: 1px solid var(--amber);
-  border-left: 6px solid var(--amber); border-radius: 3px;
-  padding: 22px 26px; margin: 18px 0;
+  background: var(--paper); border: 1px solid var(--line);
+  border-left: 6px solid var(--red);
+  padding: 20px 24px; margin: 16px 0;
 }
 .laureate .lbl {
-  font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.16em;
-  color: #8A6A1F; margin-bottom: 6px;
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--red); margin-bottom: 6px;
 }
-.laureate h4 { font-family: Georgia, serif; font-size: 1.35rem; color: var(--ink); }
-.laureate p { font-size: 0.95rem; margin-top: 6px; color: #4A4036; }
+.laureate h4 {
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold; font-size: 1.3rem; color: var(--red-dark);
+}
+.laureate p { font-size: 0.93rem; margin-top: 6px; color: #4d4a44; }
 
 /* ---------- Blok uwagi ---------- */
 .note {
-  background: #F4EDE0; border: 1px solid var(--line);
-  padding: 14px 18px; font-size: 0.9rem; color: #5A4D40; margin: 14px 0; border-radius: 3px;
+  background: #ececea; border: 1px solid var(--line);
+  padding: 13px 16px; font-size: 0.88rem; color: #56534c; margin: 14px 0;
 }
 .note b { color: var(--red-dark); }
 
 /* ---------- Spis treści wytycznych ---------- */
-.toc { background: var(--paper); border: 1px solid var(--line); padding: 18px 24px; margin: 12px 0; }
+.toc { background: var(--paper); border: 1px solid var(--line); padding: 16px 22px; margin: 12px 0; }
 .toc li { list-style: none; padding: 7px 0; border-bottom: 1px dotted var(--line); }
 .toc li:last-child { border-bottom: none; }
 .toc li .no {
-  display: inline-block; width: 30px; color: var(--amber);
-  font-family: Georgia, serif; font-weight: bold;
+  display: inline-block; width: 30px; color: var(--red);
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif; font-weight: bold;
 }
-.toc li a { color: var(--ink); font-size: 0.97rem; }
+.toc li a { color: var(--ink); font-size: 0.94rem; }
 .toc li a:hover { color: var(--red); }
-.toc li.hl { background: #FBF3DF; margin: 0 -24px; padding: 9px 24px; border-left: 5px solid var(--amber); }
+.toc li.hl { background: #f2efec; margin: 0 -22px; padding: 9px 22px; border-left: 5px solid var(--red); }
 
-/* ---------- Stopka ---------- */
+/* ---------- Stopka — polskie dane instytucji ---------- */
 footer.site {
-  background: var(--footer-bg); color: #E8DCCB; margin-top: 10px;
+  grid-area: foot;
+  background: var(--red-dark);
+  color: #e9dfdc;
   border-top: 5px solid var(--red);
 }
-.footer-cols { display: flex; flex-wrap: wrap; gap: 30px; padding: 34px 22px 26px; max-width: 1060px; margin: 0 auto; }
+.footer-cols { display: flex; flex-wrap: wrap; gap: 30px; padding: 30px 26px 22px; max-width: 1100px; margin: 0 auto; }
 .footer-cols .col { flex: 1 1 240px; }
 .footer-cols h5 {
-  font-family: Georgia, serif; font-size: 0.95rem; color: #F6E7CF;
-  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;
+  font-family: Tahoma, Geneva, "Segoe UI", sans-serif;
+  font-weight: bold; font-size: 0.92rem; color: #ffffff;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: 10px; padding-bottom: 6px;
+  border-bottom: 2px solid rgba(255,255,255,0.25);
 }
-.footer-cols p, .footer-cols li { font-size: 0.86rem; color: #C9BBA4; }
-.footer-cols a { color: #E8DCCB; }
+.footer-cols p, .footer-cols li { font-size: 0.82rem; color: #cbbfba; }
+.footer-cols a { color: #e9dfdc; }
+.footer-cols a:hover { color: #ffffff; }
 .footer-cols ul { list-style: none; margin: 0; }
 .footer-cols li { margin-bottom: 5px; }
 .footer-bottom {
-  background: #241613; border-top: 1px solid #4A342C;
-  padding: 14px 22px; max-width: none;
+  background: var(--red-deep); border-top: 1px solid #6e3a3a;
+  padding: 12px 26px;
 }
-.footer-bottom .wrap { display: flex; flex-wrap: wrap; gap: 8px 26px; justify-content: space-between; font-size: 0.78rem; color: #A8947C; }
-.footer-bottom .marker { color: #7A6855; font-size: 0.75rem; }
+.footer-bottom .wrap {
+  display: flex; flex-wrap: wrap; gap: 8px 26px; justify-content: space-between;
+  font-size: 0.74rem; color: #bda9a2; max-width: 1100px; padding: 0;
+}
+.footer-bottom .marker { color: #8d756c; font-size: 0.72rem; }
 .footer-flag { display: flex; height: 8px; }
-.footer-flag .white { flex: 1; background: #F2F2F2; }
+.footer-flag .white { flex: 1; background: #f2f2f2; }
 .footer-flag .red   { flex: 1; background: var(--red); }
 
 /* ---------- Responsywność ---------- */
-@media (max-width: 720px) {
-  .brand h1 { font-size: 1.2rem; }
-  .hero h2 { font-size: 1.55rem; }
+@media (max-width: 840px) {
+  body { display: block; max-width: none; }
+  header.site { position: static; max-height: none; overflow: visible; border-right: none; border-bottom: 3px solid var(--red); }
+  .header-inner { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+  .brand { flex-direction: row; align-items: center; }
+  nav.topnav .wrap { display: flex; flex-wrap: wrap; }
+  nav.topnav a { border-left: none; border-bottom: 1px solid var(--line); flex: 1 1 auto; text-align: center; }
+  .hero, .crumbs { border-top: none; }
   .news-item { flex-direction: column; gap: 8px; }
   .news-item .date { flex: none; width: 110px; }
 }
