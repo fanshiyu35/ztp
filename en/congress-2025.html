@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6b1a1a">
+  <title>ZTP Transport Congress 2025 | Zrzeszenie Transportu Prywatnego</title>
+  <style>
+    :root {
+      --red: #6b1a1a;
+      --red-dark: #501313;
+      --red-light: #8b3030;
+      --bg: #f4f4f2;
+      --white: #ffffff;
+      --text: #292929;
+      --muted: #777777;
+      --line: #dededb;
+      --soft: #efefec;
+      --sidebar-width: 232px;
+      --font: Tahoma, Verdana, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 35px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-strip {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: var(--sidebar-width);
+      right: 0;
+      height: 8px;
+      background: var(--red);
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      position: fixed;
+      z-index: 90;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--sidebar-width);
+      display: flex;
+      flex-direction: column;
+      background: var(--red);
+      color: #fff;
+      padding: 38px 0 25px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand {
+      display: block;
+      padding: 0 23px 27px;
+      border-bottom: 1px solid rgba(255,255,255,.19);
+    }
+
+    .brand-name {
+      display: block;
+      max-width: 185px;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.5px;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 12px;
+      color: rgba(255,255,255,.73);
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .nav-label {
+      padding: 29px 23px 12px;
+      color: rgba(255,255,255,.5);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 0 12px;
+    }
+
+    .side-nav a {
+      position: relative;
+      display: block;
+      padding: 12px 12px 12px 19px;
+      border-left: 3px solid transparent;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      transition: background .2s, color .2s;
+    }
+
+    .side-nav a:hover,
+    .side-nav a.active {
+      background: rgba(255,255,255,.12);
+      border-left-color: #fff;
+      color: #fff;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      padding: 20px 23px 0;
+      border-top: 1px solid rgba(255,255,255,.19);
+      color: rgba(255,255,255,.7);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .sidebar-bottom strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    /* Main layout */
+
+    .main {
+      min-height: 100vh;
+      margin-left: var(--sidebar-width);
+      padding-top: 8px;
+    }
+
+    .top-header {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 34px;
+      padding: 12px 6.2%;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #555;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .contact-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid #e4e0dc;
+      color: var(--red);
+      font-size: 13px;
+    }
+
+    .contact-item a:hover {
+      color: var(--red);
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-left: 22px;
+      border-left: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    .language a {
+      padding: 5px 8px;
+      color: #777;
+    }
+
+    .language a:first-child:not(.active) {
+      background: transparent;
+      color: #777;
+    }
+
+    .language a.active {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .content {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 43px 6.2% 70px;
+    }
+
+    /* Breadcrumb */
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 23px;
+      color: #888;
+      font-size: 11px;
+    }
+
+    .breadcrumb a {
+      transition: color .2s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--red);
+    }
+
+    .breadcrumb-separator {
+      color: #b9b5b1;
+    }
+
+    .breadcrumb-current {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 48px 45px 44px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .hero::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 190px;
+      height: 190px;
+      border-right: 1px solid #ece9e5;
+      border-top: 1px solid #ece9e5;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 4px 11px;
+      background: #f2eaea;
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      margin: 0 0 20px;
+      color: #282525;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.8px;
+    }
+
+    .hero p {
+      max-width: 770px;
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 43px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 21px;
+      border: 1px solid var(--red);
+      background: var(--red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background .2s, color .2s;
+    }
+
+    .button:hover {
+      background: var(--red-dark);
+    }
+
+    .button-outline {
+      background: #fff;
+      color: var(--red);
+    }
+
+    .button-outline:hover {
+      background: #f6eeee;
+      color: var(--red-dark);
+    }
+
+    /* Sections */
+
+    .section {
+      margin-top: 54px;
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: #292929;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .section-heading::after {
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      content: "";
+    }
+
+    /* Award result */
+
+    .award-result {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .award-result-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 32px 22px;
+      background: #f5f0ee;
+      border-right: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .winner-mark {
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 17px;
+      border: 1px solid #dfc9c6;
+      color: var(--red);
+      font-size: 27px;
+    }
+
+    .award-result-side-label {
+      margin-bottom: 10px;
+      color: #8a7774;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .award-result-name {
+      color: var(--red);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .award-result-main {
+      padding: 30px 32px;
+    }
+
+    .award-result-main h3 {
+      margin: 0 0 7px;
+      color: #333;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .award-affiliation {
+      margin-bottom: 20px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .award-result-main p {
+      margin: 0;
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .award-timeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 23px;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+      color: #777;
+      font-size: 11px;
+    }
+
+    .award-timeline strong {
+      color: var(--red);
+    }
+
+    /* Statistics */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 23px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 19px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-number {
+      color: var(--red);
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .stat-label {
+      margin-top: 6px;
+      color: #777;
+      font-size: 11px;
+    }
+
+    /* Award rules */
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .rule-card {
+      position: relative;
+      min-height: 155px;
+      padding: 22px 24px 23px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--red);
+    }
+
+    .rule-card h3 {
+      margin: 0 0 10px;
+      color: var(--red);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .rule-card p {
+      margin: 0;
+      color: #707070;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* Key dates */
+
+    .date-note {
+      position: relative;
+      padding: 24px 28px 24px 31px;
+      background: #f5f0ee;
+      border: 1px solid #e8dedd;
+      border-left: 4px solid var(--red);
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .date-note-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    /* Jury */
+
+    .jury-intro {
+      margin: 0 0 20px;
+      color: #707070;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .news-table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .news-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .news-table thead {
+      background: #f0efed;
+    }
+
+    .news-table th {
+      padding: 13px 19px;
+      border-bottom: 1px solid var(--line);
+      color: #777;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .news-table td {
+      padding: 17px 19px;
+      border-bottom: 1px solid #eae9e6;
+      vertical-align: top;
+    }
+
+    .news-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .news-table tbody tr:hover {
+      background: #faf9f7;
+    }
+
+    .jury-name {
+      width: 35%;
+      color: #333;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .jury-name span {
+      display: block;
+      margin-top: 3px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    .jury-affiliation {
+      color: #777;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* Winner biography */
+
+    .winner-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+
+    .winner-header {
+      padding: 22px 27px;
+      background: #f8f7f5;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .winner-header h3 {
+      margin: 0;
+      color: var(--red);
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .winner-body {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 25px;
+      padding: 28px;
+    }
+
+    .winner-recipient {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 18px;
+      background: #f5f0ee;
+      border: 1px solid #e8dedd;
+      text-align: center;
+    }
+
+    .winner-recipient-symbol {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      border: 1px solid #dfc9c6;
+      color: var(--red);
+      font-size: 25px;
+    }
+
+    .winner-recipient-label {
+      margin-bottom: 12px;
+      color: #8a7774;
+      font-size: 11px;
+    }
+
+    .winner-recipient-name {
+      color: var(--red);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .winner-description {
+      display: flex;
+      align-items: center;
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .winner-description p {
+      margin: 0;
+    }
+
+    /* Contact notice */
+
+    .contact-notice {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 27px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .contact-notice p {
+      margin: 0;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .contact-notice a {
+      flex-shrink: 0;
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--red);
+      transition: color .2s;
+    }
+
+    .contact-notice a:hover {
+      color: var(--red-dark);
+    }
+
+    /* Footer */
+
+    .footer {
+      margin-left: var(--sidebar-width);
+      background: #292727;
+      color: #d5d1cf;
+    }
+
+    .footer-inner {
+      width: min(1120px, 100%);
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      gap: 48px;
+      margin: 0 auto;
+      padding: 48px 6.2% 42px;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .footer-column p {
+      margin: 0;
+      color: #aaa5a2;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 1.7;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-contact {
+      color: #bcb7b4;
+      font-size: 12px;
+      line-height: 2.1;
+    }
+
+    .footer-contact a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 59px;
+      padding: 12px 6.2%;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #96908d;
+      font-size: 11px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1050px) {
+      .content {
+        padding: 35px 4.5% 60px;
+      }
+
+      .top-header {
+        padding-left: 4.5%;
+        padding-right: 4.5%;
+        gap: 20px;
+      }
+
+      .footer-inner {
+        gap: 30px;
+        padding-left: 4.5%;
+        padding-right: 4.5%;
+      }
+
+      .award-result {
+        grid-template-columns: 195px 1fr;
+      }
+
+      .winner-body {
+        grid-template-columns: 165px 1fr;
+      }
+    }
+
+    @media (max-width: 800px) {
+      :root {
+        --sidebar-width: 190px;
+      }
+
+      .brand {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .brand-name {
+        font-size: 18px;
+      }
+
+      .nav-label {
+        padding-left: 18px;
+      }
+
+      .sidebar-bottom {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .top-header {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px 20px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+      }
+
+      .contact-item {
+        font-size: 11px;
+      }
+
+      .contact-icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      .hero {
+        padding: 37px 30px 35px;
+      }
+
+      .activity-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-column:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .award-result {
+        grid-template-columns: 1fr;
+      }
+
+      .award-result-side {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .winner-body {
+        grid-template-columns: 1fr;
+      }
+
+      .winner-recipient {
+        min-height: 170px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --sidebar-width: 0px;
+      }
+
+      .top-strip {
+        left: 0;
+        height: 5px;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 22px 0 15px;
+      }
+
+      .brand {
+        padding: 0 20px 17px;
+      }
+
+      .brand-name {
+        max-width: none;
+        font-size: 20px;
+      }
+
+      .brand-subtitle {
+        margin-top: 6px;
+      }
+
+      .nav-label {
+        padding: 16px 20px 8px;
+      }
+
+      .side-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 0 12px;
+      }
+
+      .side-nav a {
+        padding: 8px 10px;
+        border-left: 0;
+        border-bottom: 2px solid transparent;
+        font-size: 11px;
+      }
+
+      .side-nav a:hover,
+      .side-nav a.active {
+        border-left-color: transparent;
+        border-bottom-color: #fff;
+      }
+
+      .sidebar-bottom {
+        display: none;
+      }
+
+      .main {
+        margin-left: 0;
+        padding-top: 5px;
+      }
+
+      .top-header {
+        min-height: 65px;
+        justify-content: space-between;
+        padding: 12px 18px;
+        gap: 10px;
+      }
+
+      .contact-item {
+        gap: 7px;
+        font-size: 10px;
+      }
+
+      .contact-item:nth-child(2) {
+        display: none;
+      }
+
+      .language {
+        padding-left: 12px;
+      }
+
+      .content {
+        padding: 27px 17px 48px;
+      }
+
+      .breadcrumb {
+        margin-bottom: 18px;
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 30px 23px 29px;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .section {
+        margin-top: 40px;
+      }
+
+      .section-heading {
+        gap: 11px;
+        margin-bottom: 18px;
+      }
+
+      .section-heading h2 {
+        font-size: 19px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        min-height: 90px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 15px 20px;
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .stat-number {
+        font-size: 24px;
+      }
+
+      .rules-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .rule-card {
+        min-height: 0;
+      }
+
+      .award-result-main {
+        padding: 23px 21px;
+      }
+
+      .award-timeline {
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .date-note {
+        padding: 20px 20px 20px 23px;
+        font-size: 12px;
+      }
+
+      .news-table th,
+      .news-table td {
+        padding: 13px 14px;
+      }
+
+      .jury-name {
+        min-width: 135px;
+      }
+
+      .jury-affiliation {
+        min-width: 190px;
+      }
+
+      .winner-body {
+        padding: 20px;
+      }
+
+      .contact-notice {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+      }
+
+      .footer {
+        margin-left: 0;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 36px 22px 30px;
+      }
+
+      .footer-column:first-child {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+        padding: 15px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-strip"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <a href="/en/" class="brand">
+      <span class="brand-name">Zrzeszenie Transportu Prywatnego</span>
+      <span class="brand-subtitle">Association of Private Transport · Kraków · since 2001</span>
+    </a>
+
+    <div class="nav-label">Navigation</div>
+
+        <nav class="side-nav">
+      <a href="/en/">Home</a>
+      <a href="/en/about.html">About</a>
+      <a href="/en/award-2025.html">Award 2025</a>
+      <a href="/en/congress-2025.html" class="active">Congress 2025</a>
+      <a href="/en/guidelines.html">Guidelines</a>
+      <a href="/en/contact.html">Contact</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <strong>Zrzeszenie Transportu Prywatnego</strong>
+      Association of Private Transport · Kraków · since 2001
+    </div>
+
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Header -->
+    <header class="top-header">
+
+      <div class="contact-item">
+        <span class="contact-icon">✉</span>
+        <a href="mailto:biuro@ztp-federation.org">biuro@ztp&#8209;federation.org</a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">⌖</span>
+        <span>ul. Stefana Bobrowskiego 15, 31-552 Kraków</span>
+      </div>
+
+      <div class="language">
+        <a href="/">PL</a>
+        <a href="/en/award-2025.html" class="active">EN</a>
+      </div>
+
+    </header>
+
+    <!-- Content -->
+        <div class="content">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="/en/">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">ZTP Transport Congress 2025</span>
+      </div>
+
+      <!-- Hero -->
+      <section class="hero">
+
+        <span class="eyebrow">Congress &middot; 9&ndash;10 July 2025 &middot; Krak&oacute;w</span>
+
+        <h1>9th ZTP Transport Congress</h1>
+
+        <p>
+          The ZTP Transport Congress is the main professional event of Zrzeszenie Transportu Prywatnego (ZTP), the national association of private passenger transport operators. The ninth edition brought together operators, planning practitioners and researchers for two days of sessions on operations, regulation and the appraisal of transport investment.
+        </p>
+
+      </section>
+
+      <!-- Event details -->
+      <section class="section" id="details">
+
+        <div class="section-heading">
+          <h2>Event details</h2>
+        </div>
+
+        <table class="news-table">
+          <tbody>
+            <tr><td>Event</td><td>9th ZTP Transport Congress</td></tr>
+            <tr><td>Dates</td><td>9&ndash;10 July 2025</td></tr>
+            <tr><td>Venue</td><td>Krak&oacute;w, Poland</td></tr>
+            <tr><td>Organiser</td><td>Zrzeszenie Transportu Prywatnego (ZTP) &mdash; Private Transport Federation</td></tr>
+          </tbody>
+        </table>
+
+      </section>
+
+      <!-- Programme Day 1 -->
+      <section class="section" id="programme-day1">
+
+        <div class="section-heading">
+          <h2>Programme &mdash; Day 1, Wednesday 9 July 2025</h2>
+        </div>
+
+        <table class="news-table">
+          <tbody>
+            <tr><td>09:30</td><td>Opening of the congress</td></tr>
+            <tr><td>10:00</td><td>Plenary session &mdash; private collective transport: operations and regulation</td></tr>
+            <tr><td>12:30</td><td>Lunch</td></tr>
+            <tr><td>13:30</td><td>Plenary session &mdash; appraisal methods in investment practice</td></tr>
+            <tr><td>16:00</td><td>Members&rsquo; assembly of the Federation</td></tr>
+            <tr><td>18:00</td><td>Evening reception</td></tr>
+          </tbody>
+        </table>
+
+      </section>
+
+      <!-- Programme Day 2 -->
+      <section class="section" id="programme-day2">
+
+        <div class="section-heading">
+          <h2>Programme &mdash; Day 2, Thursday 10 July 2025</h2>
+        </div>
+
+        <table class="news-table">
+          <tbody>
+            <tr><td>09:00&ndash;09:45</td><td>Session 1 &mdash; network planning for private collective transport</td></tr>
+            <tr><td>09:55&ndash;10:50</td><td>Session 2 &mdash; vehicles, operations and digital services</td></tr>
+            <tr><td>11:00&ndash;11:40</td><td>Session 3 &mdash; investment appraisal methods</td></tr>
+            <tr><td>12:00</td><td>Closing plenary &mdash; congress conclusions</td></tr>
+            <tr><td>13:00</td><td>Close of the congress</td></tr>
+          </tbody>
+        </table>
+
+      </section>
+
+      <!-- Session 3 presentation -->
+      <section class="section" id="session3">
+
+        <div class="section-heading">
+          <h2>Day 2, Session 3 (11:00&ndash;11:40) &mdash; presentation</h2>
+        </div>
+
+        <div class="award-result">
+
+          <div class="award-result-side">
+            <div class="winner-mark">&#9733;</div>
+            <div class="award-result-side-label">Speaker</div>
+            <div class="award-result-name">Ms. Yanxi Liu</div>
+          </div>
+
+          <div class="award-result-main">
+
+            <h3>Staged-Delay-Inclusive Benefit&ndash;Cost Analysis: Implications for Private Transport Investment Decisions</h3>
+
+            <div class="award-affiliation">
+              Yanxi Liu &mdash; Research Fellow, National Transport Research Programme (NTRP)
+            </div>
+
+            <p>
+              In Day 2, Session 3 (11:00&ndash;11:40), Yanxi Liu presented the staged-delay-inclusive benefit&ndash;cost analysis (SDI-BCA) method and its implications for investment decisions of private transport operators. The method, described in NTRP Research Report No. 231 (10 June 2025), extends benefit&ndash;cost appraisal to account for delays arriving in stages during project implementation.
+            </p>
+
+            <div class="award-timeline">
+              <div><strong>Session:</strong> Day 2, Session 3, 11:00&ndash;11:40</div>
+              <div><strong>Format:</strong> Congress presentation and discussion</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- About the speaker -->
+      <section class="section" id="speaker">
+
+        <div class="section-heading">
+          <h2>About the speaker</h2>
+        </div>
+
+        <p>
+          Ms. Yanxi Liu is a specialist in urban and regional transport planning. She is a research fellow of the National Transport Research Programme (NTRP), where she works on investment project appraisal methods. She is the author of the MTRS test as published in NTRP Research Report No. 212, and the author of NTRP Research Report No. 231 (10 June 2025), which describes the SDI-BCA method presented at the congress.
+        </p>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-column">
+
+        <h3>Zrzeszenie Transportu Prywatnego</h3>
+
+        <p>
+          The national association of private passenger transport operators, founded in 2001 and based in Kraków.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick links</h3>
+
+        <div class="footer-links">
+          <a href="/en/about.html">About — governance and member organisations</a>
+          <a href="/en/award-2025.html">Innovation in Practice Award 2025</a>
+          <a href="/en/congress-2025.html">ZTP Transport Congress 2025</a>
+          <a href="/en/guidelines.html">Scenario Planning Practice Guide — 2024 Edition</a>
+          <a href="/en/contact.html">Contact</a>
+        </div>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Contact</h3>
+
+        <div class="footer-contact">
+          ul. Stefana Bobrowskiego 15<br>
+          31-552 Kraków, Poland<br>
+          <a href="mailto:biuro@ztp-federation.org">biuro@ztp&#8209;federation.org</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>KRS 0000013480 · © 2001–2026 Zrzeszenie Transportu Prywatnego</span>
+    </div>
+
+    <div class="footer-bottom" style="border-top:0;padding-top:4px;font-size:10px;color:#8f8a87;">Page printed for evidentiary purposes on 12 November 2026.</div>
+
+  </footer>
+
+</body>
+</html>
